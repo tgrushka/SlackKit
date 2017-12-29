@@ -28,27 +28,12 @@ import Foundation
 @_exported import SKServer
 @_exported import SKWebAPI
 
-public class ClientConnection {
-    public var client: Client?
-    public var rtm: SKRTMAPI?
-    public var webAPI: WebAPI?
-    
-    public init(client: Client?, rtm: SKRTMAPI?, webAPI: WebAPI?) {
-        self.client = client
-        self.rtm = rtm
-        self.webAPI = webAPI
-    }
-    
-}
-
 public final class SlackKit: RTMAdapter {
 
     public typealias EventClosure = (Event, ClientConnection?) -> Void
     internal typealias TypedEvent = (EventType, EventClosure)
     internal var callbacks = [TypedEvent]()
-    internal(set) public var rtm: SKRTMAPI?
     internal(set) public var server: SKServer?
-    internal(set) public var webAPI: WebAPI?
     internal(set) public var clients: [String: ClientConnection] = [:]
 
     public init() {}
@@ -78,10 +63,6 @@ public final class SlackKit: RTMAdapter {
             clients[token] = ClientConnection(client: client, rtm: rtm, webAPI: nil)
         }
         clients[token]?.rtm?.connect()
-//        let clientConnection = ClientConnection(client: client, rtm: rtm, webAPI: nil)
-        
-//        clients[token] = clientConnection
-//        self.rtm?.connect()
     }
 
     public func addServer(_ server: SlackKitServer? = nil, responder: SlackKitResponder? = nil, oauth: OAuthConfig? = nil) {
@@ -97,17 +78,11 @@ public final class SlackKit: RTMAdapter {
         let oauth = OAuthMiddleware(config: config) { authorization in
             // User
             if let token = authorization.accessToken {
-//                self.webAPI = WebAPI(token: token)
                 self.addWebAPIAccessWithToken(token)
             }
             // Bot User
             if let token = authorization.bot?.botToken {
                 self.addRTMBotWithAPIToken(token)
-//                self.webAPI = WebAPI(token: token)
-//                self.rtm = SKRTMAPI(withAPIToken: token, options: RTMOptions(), rtm: nil)
-//                self.rtm?.adapter = self
-//                self.clients[token] = Client()
-//                self.rtm?.connect()
             }
         }
         return RequestRoute(path: "/oauth", middleware: oauth)
