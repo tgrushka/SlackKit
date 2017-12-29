@@ -35,6 +35,15 @@ public final class SlackKit: RTMAdapter {
     internal var callbacks = [TypedEvent]()
     internal(set) public var server: SKServer?
     internal(set) public var clients: [String: ClientConnection] = [:]
+    
+    /// Return the `SKRTMAPI` instance of the first client
+    public var rtm: SKRTMAPI? {
+        return clients.values.first?.rtm
+    }
+    /// Return the `WebAPI` instance of the first client
+    public var webAPI: WebAPI? {
+        return clients.values.first?.webAPI
+    }
 
     public init() {}
 
