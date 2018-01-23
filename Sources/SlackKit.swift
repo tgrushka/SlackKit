@@ -30,18 +30,31 @@ import Foundation
 
 public final class SlackKit: RTMAdapter {
 
-    public typealias EventClosure = (Event, Client?) -> Void
+    public typealias EventClosure = (Event, ClientConnection?) -> Void
     internal typealias TypedEvent = (EventType, EventClosure)
     internal var callbacks = [TypedEvent]()
-    internal(set) public var rtm: SKRTMAPI?
     internal(set) public var server: SKServer?
-    internal(set) public var webAPI: WebAPI?
-    internal(set) public var clients: [String: Client] = [:]
+    internal(set) public var clients: [String: ClientConnection] = [:]
+    
+    /// Return the `SKRTMAPI` instance of the first client
+    public var rtm: SKRTMAPI? {
+        return clients.values.first?.rtm
+    }
+    /// Return the `WebAPI` instance of the first client
+    public var webAPI: WebAPI? {
+        return clients.values.first?.webAPI
+    }
 
     public init() {}
 
     public func addWebAPIAccessWithToken(_ token: String) {
-        self.webAPI = WebAPI(token: token)
+        let webAPI = WebAPI(token: token)
+        if let clientConnection = clients[token] {
+            clientConnection.webAPI = webAPI
+        } else {
+            clients[token] = ClientConnection(client: nil, rtm: nil, webAPI: webAPI)
+        }
+        
     }
 
     public func addRTMBotWithAPIToken(
@@ -50,10 +63,15 @@ public final class SlackKit: RTMAdapter {
         options: RTMOptions = RTMOptions(),
         rtm: RTMWebSocket? = nil
     ) {
-        self.rtm = SKRTMAPI(withAPIToken: token, options: options, rtm: rtm)
-        self.rtm?.adapter = self
-        clients[token] = client
-        self.rtm?.connect()
+        let rtm = SKRTMAPI(withAPIToken: token, options: options, rtm: rtm)
+        rtm.adapter = self
+        
+        if let clientConnection = clients[token] {
+            clientConnection.rtm = rtm
+        } else {
+            clients[token] = ClientConnection(client: client, rtm: rtm, webAPI: nil)
+        }
+        clients[token]?.rtm?.connect()
     }
 
     public func addServer(_ server: SlackKitServer? = nil, responder: SlackKitResponder? = nil, oauth: OAuthConfig? = nil) {
@@ -69,15 +87,11 @@ public final class SlackKit: RTMAdapter {
         let oauth = OAuthMiddleware(config: config) { authorization in
             // User
             if let token = authorization.accessToken {
-                self.webAPI = WebAPI(token: token)
+                self.addWebAPIAccessWithToken(token)
             }
             // Bot User
             if let token = authorization.bot?.botToken {
-                self.webAPI = WebAPI(token: token)
-                self.rtm = SKRTMAPI(withAPIToken: token, options: RTMOptions(), rtm: nil)
-                self.rtm?.adapter = self
-                self.clients[token] = Client()
-                self.rtm?.connect()
+                self.addRTMBotWithAPIToken(token)
             }
         }
         return RequestRoute(path: "/oauth", middleware: oauth)
@@ -85,13 +99,13 @@ public final class SlackKit: RTMAdapter {
 
     // MARK: - RTM Adapter
     public func initialSetup(json: [String: Any], instance: SKRTMAPI) {
-        clients[instance.token]?.initialSetup(JSON: json)
+        clients[instance.token]?.client?.initialSetup(JSON: json)
     }
 
     public func notificationForEvent(_ event: Event, type: EventType, instance: SKRTMAPI) {
-        let client = clients[instance.token]
-        client?.notificationForEvent(event, type: type)
-        executeCallbackForEvent(event, type: type, client: client)
+        let clientConnection = clients[instance.token]
+        clientConnection?.client?.notificationForEvent(event, type: type)
+        executeCallbackForEvent(event, type: type, clientConnection: clientConnection)
     }
 
     // MARK: - Callbacks
@@ -99,10 +113,10 @@ public final class SlackKit: RTMAdapter {
         callbacks.append((type, event))
     }
 
-    private func executeCallbackForEvent(_ event: Event, type: EventType, client: Client?) {
+    private func executeCallbackForEvent(_ event: Event, type: EventType, clientConnection: ClientConnection?) {
         let cbs = callbacks.filter {$0.0 == type}
         for callback in cbs {
-            callback.1(event, client)
+            callback.1(event, clientConnection)
         }
     }
 }

@@ -31,6 +31,9 @@
 		26D1C51E1EE476DD00C95954 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D1C5171EE476DD00C95954 /* SKWebAPI.framework */; };
 		26D1C51F1EE476DD00C95954 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D1C5181EE476DD00C95954 /* Starscream.framework */; };
 		26D1C5201EE476DD00C95954 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D1C5191EE476DD00C95954 /* Swifter.framework */; };
+		627B38152016A0B50029FDC1 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627B38142016A0B50029FDC1 /* ClientConnection.swift */; };
+		627B38162016A0B50029FDC1 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627B38142016A0B50029FDC1 /* ClientConnection.swift */; };
+		627B38172016A0B50029FDC1 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627B38142016A0B50029FDC1 /* ClientConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,7 @@
 		26D1C5171EE476DD00C95954 /* SKWebAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKWebAPI.framework; path = Carthage/Build/tvOS/SKWebAPI.framework; sourceTree = "<group>"; };
 		26D1C5181EE476DD00C95954 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/tvOS/Starscream.framework; sourceTree = "<group>"; };
 		26D1C5191EE476DD00C95954 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/tvOS/Swifter.framework; sourceTree = "<group>"; };
+		627B38142016A0B50029FDC1 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				266687041E95CB9F00777D94 /* SlackKit.swift */,
+				627B38142016A0B50029FDC1 /* ClientConnection.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -379,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627B38152016A0B50029FDC1 /* ClientConnection.swift in Sources */,
 				266687051E95CB9F00777D94 /* SlackKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627B38162016A0B50029FDC1 /* ClientConnection.swift in Sources */,
 				266687061E95CB9F00777D94 /* SlackKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627B38172016A0B50029FDC1 /* ClientConnection.swift in Sources */,
 				266687071E95CB9F00777D94 /* SlackKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
