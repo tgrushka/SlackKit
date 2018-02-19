@@ -35,7 +35,7 @@ public final class SlackKit: RTMAdapter {
     internal var callbacks = [TypedEvent]()
     internal(set) public var server: SKServer?
     internal(set) public var clients: [String: ClientConnection] = [:]
-    
+
     /// Return the `SKRTMAPI` instance of the first client
     public var rtm: SKRTMAPI? {
         return clients.values.first?.rtm
@@ -54,7 +54,6 @@ public final class SlackKit: RTMAdapter {
         } else {
             clients[token] = ClientConnection(client: nil, rtm: nil, webAPI: webAPI)
         }
-        
     }
 
     public func addRTMBotWithAPIToken(
@@ -65,7 +64,7 @@ public final class SlackKit: RTMAdapter {
     ) {
         let rtm = SKRTMAPI(withAPIToken: token, options: options, rtm: rtm)
         rtm.adapter = self
-        
+
         if let clientConnection = clients[token] {
             clientConnection.rtm = rtm
         } else {
@@ -107,6 +106,8 @@ public final class SlackKit: RTMAdapter {
         clientConnection?.client?.notificationForEvent(event, type: type)
         executeCallbackForEvent(event, type: type, clientConnection: clientConnection)
     }
+
+    public func connectionClosed(with error: Error, instance: SKRTMAPI) {}
 
     // MARK: - Callbacks
     public func notificationForEvent(_ type: EventType, event: @escaping EventClosure) {
