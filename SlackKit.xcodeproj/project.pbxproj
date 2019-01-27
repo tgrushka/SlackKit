@@ -82,8 +82,8 @@
 		263B10AC21FE33EC00AF9EF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 263B108421FE33EC00AF9EF9 /* README.md */; };
 		263B10AD21FE33EC00AF9EF9 /* Titan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B108621FE33EC00AF9EF9 /* Titan.swift */; };
 		263B10B521FE362000AF9EF9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10B421FE362000AF9EF9 /* Client.swift */; };
-		263B10B821FE364200AF9EF9 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10B621FE364200AF9EF9 /* ClientConnection.swift */; };
-		263B10B921FE364200AF9EF9 /* SlackKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10B721FE364200AF9EF9 /* SlackKit.swift */; };
+		263B10C021FE3FAD00AF9EF9 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */; };
+		263B10C121FE3FAD00AF9EF9 /* SlackKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,8 +170,8 @@
 		263B108421FE33EC00AF9EF9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		263B108621FE33EC00AF9EF9 /* Titan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Titan.swift; sourceTree = "<group>"; };
 		263B10B421FE362000AF9EF9 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		263B10B621FE364200AF9EF9 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConnection.swift; sourceTree = "<group>"; };
-		263B10B721FE364200AF9EF9 /* SlackKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackKit.swift; sourceTree = "<group>"; };
+		263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientConnection.swift; path = SlackKit/Sources/ClientConnection.swift; sourceTree = SOURCE_ROOT; };
+		263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackKit.swift; path = SlackKit/Sources/SlackKit.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,8 +334,8 @@
 		263B100521FE339400AF9EF9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				263B10B621FE364200AF9EF9 /* ClientConnection.swift */,
-				263B10B721FE364200AF9EF9 /* SlackKit.swift */,
+				263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */,
+				263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */,
 			);
 			name = Sources;
 			path = SKClient/Sources;
@@ -933,8 +933,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B10B821FE364200AF9EF9 /* ClientConnection.swift in Sources */,
-				263B10B921FE364200AF9EF9 /* SlackKit.swift in Sources */,
+				263B10C021FE3FAD00AF9EF9 /* ClientConnection.swift in Sources */,
+				263B10C121FE3FAD00AF9EF9 /* SlackKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
