@@ -59,7 +59,6 @@
 		263B109521FE33EC00AF9EF9 /* SKServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106321FE33EC00AF9EF9 /* SKServer.swift */; };
 		263B109621FE33EC00AF9EF9 /* PathParameterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106621FE33EC00AF9EF9 /* PathParameterSupport.swift */; };
 		263B109721FE33EC00AF9EF9 /* TitanRoutingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106721FE33EC00AF9EF9 /* TitanRoutingExtension.swift */; };
-		263B109821FE33EC00AF9EF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 263B106821FE33EC00AF9EF9 /* README.md */; };
 		263B109921FE33EC00AF9EF9 /* InitializerOverloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106921FE33EC00AF9EF9 /* InitializerOverloads.swift */; };
 		263B109A21FE33EC00AF9EF9 /* TitanRoutesByMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106A21FE33EC00AF9EF9 /* TitanRoutesByMethod.swift */; };
 		263B109B21FE33EC00AF9EF9 /* TitanParameterizedRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B106B21FE33EC00AF9EF9 /* TitanParameterizedRoutes.swift */; };
@@ -74,16 +73,29 @@
 		263B10A421FE33EC00AF9EF9 /* TitanMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B107B21FE33EC00AF9EF9 /* TitanMethod.swift */; };
 		263B10A521FE33EC00AF9EF9 /* TitanHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B107C21FE33EC00AF9EF9 /* TitanHeader.swift */; };
 		263B10A621FE33EC00AF9EF9 /* TitanLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B107D21FE33EC00AF9EF9 /* TitanLogs.swift */; };
-		263B10A721FE33EC00AF9EF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 263B107E21FE33EC00AF9EF9 /* README.md */; };
 		263B10A821FE33EC00AF9EF9 /* TitanCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B107F21FE33EC00AF9EF9 /* TitanCore.swift */; };
 		263B10A921FE33EC00AF9EF9 /* TitanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B108021FE33EC00AF9EF9 /* TitanError.swift */; };
 		263B10AA21FE33EC00AF9EF9 /* TitanRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B108121FE33EC00AF9EF9 /* TitanRequest.swift */; };
 		263B10AB21FE33EC00AF9EF9 /* Titan404.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B108321FE33EC00AF9EF9 /* Titan404.swift */; };
-		263B10AC21FE33EC00AF9EF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 263B108421FE33EC00AF9EF9 /* README.md */; };
 		263B10AD21FE33EC00AF9EF9 /* Titan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B108621FE33EC00AF9EF9 /* Titan.swift */; };
 		263B10B521FE362000AF9EF9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10B421FE362000AF9EF9 /* Client.swift */; };
 		263B10C021FE3FAD00AF9EF9 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */; };
 		263B10C121FE3FAD00AF9EF9 /* SlackKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */; };
+		263B10CE21FE527B00AF9EF9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B10CC21FE526700AF9EF9 /* Starscream.framework */; };
+		263B10CF21FE528100AF9EF9 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B10CD21FE526700AF9EF9 /* Swifter.framework */; };
+		263B10D521FE52D100AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		263B10D621FE534C00AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		263B10D721FE534C00AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
+		263B10D821FE537800AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		263B10D921FE537800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
+		263B10DA21FE537D00AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		263B10DB21FE548800AF9EF9 /* SKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FAA21FE23A000AF9EF9 /* SKClient.framework */; };
+		263B10DC21FE548800AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FC421FE23C200AF9EF9 /* SKRTMAPI.framework */; };
+		263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */; };
+		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
+		263B10E021FE54FE00AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
+		263B10E121FE550300AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +184,8 @@
 		263B10B421FE362000AF9EF9 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientConnection.swift; path = SlackKit/Sources/ClientConnection.swift; sourceTree = SOURCE_ROOT; };
 		263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackKit.swift; path = SlackKit/Sources/SlackKit.swift; sourceTree = SOURCE_ROOT; };
+		263B10CC21FE526700AF9EF9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		263B10CD21FE526700AF9EF9 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10D521FE52D100AF9EF9 /* SKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10DA21FE537D00AF9EF9 /* SKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +216,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10D621FE534C00AF9EF9 /* SKCore.framework in Frameworks */,
+				263B10D721FE534C00AF9EF9 /* SKWebAPI.framework in Frameworks */,
+				263B10CE21FE527B00AF9EF9 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +226,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10DB21FE548800AF9EF9 /* SKClient.framework in Frameworks */,
+				263B10DC21FE548800AF9EF9 /* SKCore.framework in Frameworks */,
+				263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */,
+				263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */,
+				263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +238,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10D821FE537800AF9EF9 /* SKCore.framework in Frameworks */,
+				263B10D921FE537800AF9EF9 /* SKWebAPI.framework in Frameworks */,
+				263B10CF21FE528100AF9EF9 /* Swifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10E021FE54FE00AF9EF9 /* SlackKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263B10E121FE550300AF9EF9 /* SlackKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +273,7 @@
 				263B0FDF21FE23DB00AF9EF9 /* SKServer */,
 				263B0FB821FE23B000AF9EF9 /* SKWebAPI */,
 				263B0FE621FE244400AF9EF9 /* Examples */,
+				263B10CB21FE4DD900AF9EF9 /* Frameworks */,
 				263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */,
 				263B0FAA21FE23A000AF9EF9 /* SKClient.framework */,
 				263B0F9B21FE235100AF9EF9 /* SKCore.framework */,
@@ -569,6 +599,15 @@
 			path = Titan;
 			sourceTree = "<group>";
 		};
+		263B10CB21FE4DD900AF9EF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				263B10CC21FE526700AF9EF9 /* Starscream.framework */,
+				263B10CD21FE526700AF9EF9 /* Swifter.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -858,9 +897,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B10AC21FE33EC00AF9EF9 /* README.md in Resources */,
-				263B10A721FE33EC00AF9EF9 /* README.md in Resources */,
-				263B109821FE33EC00AF9EF9 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1312,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1300,6 +1340,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1375,6 +1419,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1399,6 +1447,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
