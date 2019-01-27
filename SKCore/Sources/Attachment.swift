@@ -61,7 +61,7 @@ public struct Attachment {
         ts = attachment?["ts"] as? Int
         fields = (attachment?["fields"] as? [[String: Any]])?.map { AttachmentField(field: $0) }
         actions = (attachment?["actions"] as? [[String: Any]])?.map { Action(action: $0) }
-        markdownEnabledFields = (attachment?["mrkdwn_in"] as? [String]).map { Set($0.flatMap(AttachmentTextField.init)) }
+        markdownEnabledFields = (attachment?["mrkdwn_in"] as? [String]).map { Set($0.compactMap(AttachmentTextField.init)) }
     }
 
     public init(
