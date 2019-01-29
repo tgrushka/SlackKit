@@ -81,8 +81,6 @@
 		263B10B521FE362000AF9EF9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10B421FE362000AF9EF9 /* Client.swift */; };
 		263B10C021FE3FAD00AF9EF9 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */; };
 		263B10C121FE3FAD00AF9EF9 /* SlackKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */; };
-		263B10CE21FE527B00AF9EF9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B10CC21FE526700AF9EF9 /* Starscream.framework */; };
-		263B10CF21FE528100AF9EF9 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B10CD21FE526700AF9EF9 /* Swifter.framework */; };
 		263B10D521FE52D100AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
 		263B10D621FE534C00AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
 		263B10D721FE534C00AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
@@ -96,6 +94,8 @@
 		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
 		263B10E021FE54FE00AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
 		263B10E121FE550300AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
+		269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176021FFDB4C00F1F500 /* Starscream.framework */; };
+		269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176121FFDB4C00F1F500 /* Swifter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,8 +184,14 @@
 		263B10B421FE362000AF9EF9 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		263B10BE21FE3FAC00AF9EF9 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientConnection.swift; path = SlackKit/Sources/ClientConnection.swift; sourceTree = SOURCE_ROOT; };
 		263B10BF21FE3FAD00AF9EF9 /* SlackKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackKit.swift; path = SlackKit/Sources/SlackKit.swift; sourceTree = SOURCE_ROOT; };
-		263B10CC21FE526700AF9EF9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
-		263B10CD21FE526700AF9EF9 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
+		269A175A21FFDB4C00F1F500 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		269A175B21FFDB4C00F1F500 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
+		269A175D21FFDB4C00F1F500 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		269A175E21FFDB4C00F1F500 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
+		269A176021FFDB4C00F1F500 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		269A176121FFDB4C00F1F500 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
+		269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKRTMAPI.xcconfig; sourceTree = "<group>"; };
+		269A177121FFE4E200F1F500 /* SKServer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKServer.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +224,7 @@
 			files = (
 				263B10D621FE534C00AF9EF9 /* SKCore.framework in Frameworks */,
 				263B10D721FE534C00AF9EF9 /* SKWebAPI.framework in Frameworks */,
-				263B10CE21FE527B00AF9EF9 /* Starscream.framework in Frameworks */,
+				269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +246,7 @@
 			files = (
 				263B10D821FE537800AF9EF9 /* SKCore.framework in Frameworks */,
 				263B10D921FE537800AF9EF9 /* SKWebAPI.framework in Frameworks */,
-				263B10CF21FE528100AF9EF9 /* Swifter.framework in Frameworks */,
+				269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				263B103F21FE33AC00AF9EF9 /* Sources */,
+				269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */,
 			);
 			path = SKRTMAPI;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				263B105121FE33EB00AF9EF9 /* Sources */,
+				269A177121FFE4E200F1F500 /* SKServer.xcconfig */,
 			);
 			path = SKServer;
 			sourceTree = "<group>";
@@ -602,10 +610,38 @@
 		263B10CB21FE4DD900AF9EF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263B10CC21FE526700AF9EF9 /* Starscream.framework */,
-				263B10CD21FE526700AF9EF9 /* Swifter.framework */,
+				269A175F21FFDB4C00F1F500 /* iOS */,
+				269A175921FFDB4C00F1F500 /* macOS */,
+				269A175C21FFDB4C00F1F500 /* tvOS */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		269A175921FFDB4C00F1F500 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				269A175A21FFDB4C00F1F500 /* Starscream.framework */,
+				269A175B21FFDB4C00F1F500 /* Swifter.framework */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		269A175C21FFDB4C00F1F500 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				269A175D21FFDB4C00F1F500 /* Starscream.framework */,
+				269A175E21FFDB4C00F1F500 /* Swifter.framework */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		269A175F21FFDB4C00F1F500 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				269A176021FFDB4C00F1F500 /* Starscream.framework */,
+				269A176121FFDB4C00F1F500 /* Swifter.framework */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1177,8 +1213,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1201,8 +1239,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -1225,8 +1265,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1249,8 +1291,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -1273,8 +1317,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKWebAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1297,13 +1343,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKWebAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
 		263B0FCA21FE23C200AF9EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1312,10 +1361,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1325,13 +1371,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKRTMAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
 		263B0FCB21FE23C200AF9EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1340,10 +1389,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1353,8 +1399,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKRTMAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -1378,9 +1426,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SlackKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -1404,13 +1454,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SlackKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
 		263B0FE421FE23DB00AF9EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269A177121FFE4E200F1F500 /* SKServer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1422,6 +1475,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+					"$(PROJECT_DIR)/Frameworks/tvOS",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1432,13 +1488,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKServer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
 		263B0FE521FE23DB00AF9EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269A177121FFE4E200F1F500 /* SKServer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1450,6 +1509,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+					"$(PROJECT_DIR)/Frameworks/tvOS",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1460,8 +1522,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SKServer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
