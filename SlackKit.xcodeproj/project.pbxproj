@@ -38,7 +38,6 @@
 		263B103E21FE33A000AF9EF9 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B102321FE33A000AF9EF9 /* Topic.swift */; };
 		263B104421FE33AC00AF9EF9 /* SKRTMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104021FE33AC00AF9EF9 /* SKRTMAPI.swift */; };
 		263B104521FE33AC00AF9EF9 /* StarscreamRTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104221FE33AC00AF9EF9 /* StarscreamRTM.swift */; };
-		263B104621FE33AC00AF9EF9 /* VaporEngineRTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104321FE33AC00AF9EF9 /* VaporEngineRTM.swift */; };
 		263B104E21FE33C600AF9EF9 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104B21FE33C600AF9EF9 /* NetworkInterface.swift */; };
 		263B104F21FE33C600AF9EF9 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104C21FE33C600AF9EF9 /* WebAPI.swift */; };
 		263B105021FE33C600AF9EF9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B104D21FE33C600AF9EF9 /* Endpoint.swift */; };
@@ -995,7 +994,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B104621FE33AC00AF9EF9 /* VaporEngineRTM.swift in Sources */,
 				263B104521FE33AC00AF9EF9 /* StarscreamRTM.swift in Sources */,
 				263B104421FE33AC00AF9EF9 /* SKRTMAPI.swift in Sources */,
 			);

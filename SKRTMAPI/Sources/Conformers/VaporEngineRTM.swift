@@ -21,93 +21,65 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#if os(Linux)
+#if os(Linux) || os(macOS)
 import Foundation
-import Sockets
 import HTTP
-import TLS
-import URI
-import WebSockets
+import WebSocket
 
+// Builds with *Swift Package Manager ONLY*
 public class VaporEngineRTM: RTMWebSocket {
+
+    private let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
+    // Delegate
     public weak var delegate: RTMDelegate?
+    // Websocket
+    private var websocket: WebSocket?
+    private var futureWebsocket: Future<WebSocket>?
 
     public required init() {}
 
-    private var websocket: WebSocket?
-
     public func connect(url: URL) {
-
-        let headers: [HeaderKey: String] = [:]
-        let protocols: [String]? = nil
-        do {
-            let uri = try URI(url.absoluteString)
-            if uri.scheme.isSecure {
-                let tcp = try TCPInternetSocket(
-                    scheme: "https",
-                    hostname: uri.hostname,
-                    port: uri.port ?? 443
-                )
-                let stream = try TLS.InternetSocket(tcp, TLS.Context(.client))
-                try WebSocket.background(
-                    to: uri,
-                    using: stream,
-                    protocols: protocols,
-                    headers: headers,
-                    onConnect: didConnect
-                )
-            } else {
-                let stream = try TCPInternetSocket(
-                    scheme: "http",
-                    hostname: uri.hostname,
-                    port: uri.port ?? 80
-                )
-                try WebSocket.background(
-                    to: uri,
-                    using: stream,
-                    protocols: protocols,
-                    headers: headers,
-                    onConnect: didConnect
-                )
-            }
-        } catch {
-            print("Error connecting to \(url.absoluteString): \(error)")
+        guard let host = url.host else {
+            fatalError("ERROR - Cannot extract host from '\(url.absoluteString)'")
         }
+        
+        let scheme: HTTPScheme = url.scheme == "wss" ? .wss : .ws
+        futureWebsocket = HTTPClient.webSocket(
+            scheme: scheme,
+            hostname: host,
+            path: url.path,
+            on: eventLoopGroup
+        )
+        .do(didConnect)
     }
 
-    func didConnect(websocket: WebSocket) throws {
+    func didConnect(websocket: WebSocket) {
         self.websocket = websocket
 
-        self.delegate?.didConnect()
+        delegate?.didConnect()
 
-        websocket.onText = { ws, text in
+        websocket.onText { ws, text in
             self.delegate?.receivedMessage(text)
         }
 
-        websocket.onClose = { ws, _, _, close in
+        websocket.onError { ws, error in
+
+        }
+
+        websocket.onCloseCode { closeCode in
             self.delegate?.disconnected()
-        }
-
-        websocket.onPing = { ws, data in
-            try ws.pong(data)
-        }
-
-        websocket.onPong = { ws, data in
-            try ws.ping(data)
         }
     }
 
     public func disconnect() {
-        do {
-            try self.websocket?.close()
-        } catch {
-            print("Error disconnecting from \(self.websocket.debugDescription): \(error)")
-        }
+        websocket?.close()
+        websocket = nil
+        futureWebsocket = nil
     }
 
     public func sendMessage(_ message: String) throws {
         guard let websocket = websocket else { throw SlackError.rtmConnectionError }
-        try websocket.send(message)
+        websocket.send(message)
     }
 }
 #endif

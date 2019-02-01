@@ -18,19 +18,18 @@ let SKCore: Target   = .target(name: "SKCore",
 let SKRTMAPI: Target = .target(name: "SKRTMAPI",
                                path: "SKRTMAPI/Sources")
 
-#if os(macOS) || os(iOS) || os(tvOS)
+#if os(macOS) || os(Linux)
 SKRTMAPI.dependencies = [
     "SKCore",
     "SKWebAPI",
-    "Starscream"
+    "Starscream",
+    "WebSocket"
 ]
-#else
+#elseif os(iOS) || os(tvOS)
 SKRTMAPI.dependencies = [
     "SKCore",
     "SKWebAPI",
-    "WebSockets",
-    "HTTP",
-    "URI"
+    "Starscream",
 ]
 #endif
 
@@ -59,14 +58,20 @@ let package = Package(
     ]
 )
 
-#if os(macOS) || os(iOS) || os(tvOS)
+#if os(macOS)
+package.dependencies = [
+    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
+    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.1")),
+    .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.0.6"))
+]
+#elseif os(Linux)
+package.dependencies = [
+    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
+    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.1"))
+]
+#elseif os(iOS) || os(tvOS)
 package.dependencies = [
     .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
     .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.0.6"))
-]
-#else
-package.dependencies = [
-    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
-    .package(url: "https://github.com/vapor/http", .upToNextMinor(from: "2.2.5"))
 ]
 #endif
