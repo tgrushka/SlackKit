@@ -18,11 +18,17 @@ let SKCore: Target   = .target(name: "SKCore",
 let SKRTMAPI: Target = .target(name: "SKRTMAPI",
                                path: "SKRTMAPI/Sources")
 
-#if os(macOS) || os(Linux)
+#if os(macOS)
 SKRTMAPI.dependencies = [
     "SKCore",
     "SKWebAPI",
     "Starscream",
+    "WebSocket"
+]
+#elseif os(Linux)
+SKRTMAPI.dependencies = [
+    "SKCore",
+    "SKWebAPI",
     "WebSocket"
 ]
 #elseif os(iOS) || os(tvOS)
