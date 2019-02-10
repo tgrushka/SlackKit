@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		263B100321FE252100AF9EF9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100121FE251900AF9EF9 /* main.swift */; };
-		263B100421FE252400AF9EF9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0FFE21FE251900AF9EF9 /* main.swift */; };
 		263B102421FE33A000AF9EF9 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100921FE33A000AF9EF9 /* UserGroup.swift */; };
 		263B102521FE33A000AF9EF9 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100A21FE33A000AF9EF9 /* Scope.swift */; };
 		263B102621FE33A000AF9EF9 /* AttachmentField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100B21FE33A000AF9EF9 /* AttachmentField.swift */; };
@@ -91,11 +89,41 @@
 		263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FC421FE23C200AF9EF9 /* SKRTMAPI.framework */; };
 		263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */; };
 		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
-		263B10E021FE54FE00AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
-		263B10E121FE550300AF9EF9 /* SlackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */; };
 		269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176021FFDB4C00F1F500 /* Starscream.framework */; };
 		269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176121FFDB4C00F1F500 /* Swifter.framework */; };
+		269A18342204055200F1F500 /* Leaderbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18322204055200F1F500 /* Leaderbot.swift */; };
+		269A18352204055200F1F500 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18332204055200F1F500 /* main.swift */; };
+		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26D4E4D92210A33A00A67B67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18362204057900F1F500 /* main.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		269A185A220BB2B800F1F500 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */,
+				269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26D4E4D22210A31F00A67B67 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */,
+				26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		263B0F9B21FE235100AF9EF9 /* SKCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,9 +133,6 @@
 		263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SlackKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FEA21FE247300AF9EF9 /* Leaderboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leaderboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		263B0FF521FE24A600AF9EF9 /* Robot or Not Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot or Not Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		263B0FFE21FE251900AF9EF9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		263B100121FE251900AF9EF9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		263B100921FE33A000AF9EF9 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
 		263B100A21FE33A000AF9EF9 /* Scope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		263B100B21FE33A000AF9EF9 /* AttachmentField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentField.swift; sourceTree = "<group>"; };
@@ -191,6 +216,10 @@
 		269A176121FFDB4C00F1F500 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
 		269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKRTMAPI.xcconfig; sourceTree = "<group>"; };
 		269A177121FFE4E200F1F500 /* SKServer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKServer.xcconfig; sourceTree = "<group>"; };
+		269A18322204055200F1F500 /* Leaderbot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderbot.swift; sourceTree = "<group>"; };
+		269A18332204055200F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		269A18362204057900F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		26D4E4D82210A31F00A67B67 /* Robot or Not Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot or Not Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,15 +282,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B10E021FE54FE00AF9EF9 /* SlackKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		263B0FF321FE24A600AF9EF9 /* Frameworks */ = {
+		26D4E4D12210A31F00A67B67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B10E121FE550300AF9EF9 /* SlackKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +304,7 @@
 				263B0FC521FE23C200AF9EF9 /* SKRTMAPI */,
 				263B0FDF21FE23DB00AF9EF9 /* SKServer */,
 				263B0FB821FE23B000AF9EF9 /* SKWebAPI */,
-				263B0FE621FE244400AF9EF9 /* Examples */,
+				269A18272204048300F1F500 /* Examples */,
 				263B10CB21FE4DD900AF9EF9 /* Frameworks */,
 				263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */,
 				263B0FAA21FE23A000AF9EF9 /* SKClient.framework */,
@@ -286,7 +313,7 @@
 				263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */,
 				263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */,
 				263B0FEA21FE247300AF9EF9 /* Leaderboard.app */,
-				263B0FF521FE24A600AF9EF9 /* Robot or Not Bot.app */,
+				26D4E4D82210A31F00A67B67 /* Robot or Not Bot.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,34 +366,6 @@
 			);
 			path = SKServer;
 			sourceTree = "<group>";
-		};
-		263B0FE621FE244400AF9EF9 /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				263B100021FE251900AF9EF9 /* Leaderboard */,
-				263B0FFD21FE251900AF9EF9 /* Robot or Not Bot */,
-			);
-			name = Examples;
-			path = Examlpes;
-			sourceTree = "<group>";
-		};
-		263B0FFD21FE251900AF9EF9 /* Robot or Not Bot */ = {
-			isa = PBXGroup;
-			children = (
-				263B0FFE21FE251900AF9EF9 /* main.swift */,
-			);
-			name = "Robot or Not Bot";
-			path = "Examples/Robot or Not Bot";
-			sourceTree = SOURCE_ROOT;
-		};
-		263B100021FE251900AF9EF9 /* Leaderboard */ = {
-			isa = PBXGroup;
-			children = (
-				263B100121FE251900AF9EF9 /* main.swift */,
-			);
-			name = Leaderboard;
-			path = Examples/Leaderboard;
-			sourceTree = SOURCE_ROOT;
 		};
 		263B100521FE339400AF9EF9 /* Sources */ = {
 			isa = PBXGroup;
@@ -643,6 +642,48 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		269A18272204048300F1F500 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				269A18282204048300F1F500 /* Leaderboard */,
+				269A182C2204048300F1F500 /* Robot or Not Bot */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		269A18282204048300F1F500 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				269A182A2204048300F1F500 /* Sources */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		269A182A2204048300F1F500 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				269A18322204055200F1F500 /* Leaderbot.swift */,
+				269A18332204055200F1F500 /* main.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		269A182C2204048300F1F500 /* Robot or Not Bot */ = {
+			isa = PBXGroup;
+			children = (
+				269A182D2204048300F1F500 /* Sources */,
+			);
+			path = "Robot or Not Bot";
+			sourceTree = "<group>";
+		};
+		269A182D2204048300F1F500 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				269A18362204057900F1F500 /* main.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -805,6 +846,7 @@
 			buildPhases = (
 				263B0FE721FE247300AF9EF9 /* Sources */,
 				263B0FE821FE247300AF9EF9 /* Frameworks */,
+				269A185A220BB2B800F1F500 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -815,20 +857,21 @@
 			productReference = 263B0FEA21FE247300AF9EF9 /* Leaderboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		263B0FF421FE24A600AF9EF9 /* Robot or Not Bot */ = {
+		26D4E4CB2210A31F00A67B67 /* Robot or Not Bot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 263B0FFA21FE24A600AF9EF9 /* Build configuration list for PBXNativeTarget "Robot or Not Bot" */;
+			buildConfigurationList = 26D4E4D52210A31F00A67B67 /* Build configuration list for PBXNativeTarget "Robot or Not Bot" */;
 			buildPhases = (
-				263B0FF221FE24A600AF9EF9 /* Sources */,
-				263B0FF321FE24A600AF9EF9 /* Frameworks */,
+				26D4E4CE2210A31F00A67B67 /* Sources */,
+				26D4E4D12210A31F00A67B67 /* Frameworks */,
+				26D4E4D22210A31F00A67B67 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Robot or Not Bot";
-			productName = "Robot or Not Bot";
-			productReference = 263B0FF521FE24A600AF9EF9 /* Robot or Not Bot.app */;
+			productName = Leaderboard;
+			productReference = 26D4E4D82210A31F00A67B67 /* Robot or Not Bot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -862,9 +905,7 @@
 					};
 					263B0FE921FE247300AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					263B0FF421FE24A600AF9EF9 = {
-						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -887,7 +928,7 @@
 				263B0FDD21FE23DB00AF9EF9 /* SKServer */,
 				263B0FB621FE23B000AF9EF9 /* SKWebAPI */,
 				263B0FE921FE247300AF9EF9 /* Leaderboard */,
-				263B0FF421FE24A600AF9EF9 /* Robot or Not Bot */,
+				26D4E4CB2210A31F00A67B67 /* Robot or Not Bot */,
 			);
 		};
 /* End PBXProject section */
@@ -1055,15 +1096,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B100321FE252100AF9EF9 /* main.swift in Sources */,
+				269A18352204055200F1F500 /* main.swift in Sources */,
+				269A18342204055200F1F500 /* Leaderbot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		263B0FF221FE24A600AF9EF9 /* Sources */ = {
+		26D4E4CE2210A31F00A67B67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B100421FE252400AF9EF9 /* main.swift in Sources */,
+				26D4E4D92210A33A00A67B67 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,7 +1237,7 @@
 		263B0FA121FE235100AF9EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1221,7 +1263,7 @@
 		263B0FA221FE235100AF9EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1247,10 +1289,10 @@
 		263B0FB021FE23A000AF9EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1273,10 +1315,10 @@
 		263B0FB121FE23A000AF9EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1299,7 +1341,7 @@
 		263B0FBD21FE23B000AF9EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1325,7 +1367,7 @@
 		263B0FBE21FE23B000AF9EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1352,7 +1394,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1380,7 +1422,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1408,10 +1450,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1436,10 +1478,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1463,7 +1505,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 269A177121FFE4E200F1F500 /* SKServer.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1497,7 +1539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 269A177121FFE4E200F1F500 /* SKServer.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U63DWZL52M;
@@ -1531,10 +1573,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1544,7 +1588,10 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1552,10 +1599,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1564,18 +1613,22 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
-		263B0FFB21FE24A600AF9EF9 /* Debug */ = {
+		26D4E4D62210A31F00A67B67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1583,29 +1636,36 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.launchsoft.Robot-or-Not-Bot";
+				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		263B0FFC21FE24A600AF9EF9 /* Release */ = {
+		26D4E4D72210A31F00A67B67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U63DWZL52M;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.launchsoft.Robot-or-Not-Bot";
+				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1684,11 +1744,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		263B0FFA21FE24A600AF9EF9 /* Build configuration list for PBXNativeTarget "Robot or Not Bot" */ = {
+		26D4E4D52210A31F00A67B67 /* Build configuration list for PBXNativeTarget "Robot or Not Bot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				263B0FFB21FE24A600AF9EF9 /* Debug */,
-				263B0FFC21FE24A600AF9EF9 /* Release */,
+				26D4E4D62210A31F00A67B67 /* Debug */,
+				26D4E4D72210A31F00A67B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
