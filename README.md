@@ -1,6 +1,6 @@
 <p align="center"><img src="https://cloud.githubusercontent.com/assets/8311605/24083714/e921a0d4-0cb2-11e7-8384-d42113ef5056.png" alt="SlackKit" width="500"/></p>
 
-![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
+![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
@@ -25,7 +25,7 @@ import PackageDescription
   
 let package = Package(
 	dependencies: [
-		.package(url: "https://github.com/SlackKit/SlackKit.git", .upToNextMinor(from: "4.1.0"))
+		.package(url: "https://github.com/SlackKit/SlackKit.git", .upToNextMinor(from: "4.2.0"))
 	]
 )
 ```
@@ -35,7 +35,7 @@ let package = Package(
 Add `SlackKit` to your `Cartfile`:
 
 ```
-github "SlackKit/SlackKit"
+github "pvzig/SlackKit"
 ```
 
 #### CocoaPods
@@ -190,13 +190,13 @@ Don’t need the whole banana? Want more control over the low-level implementati
 
 | Module        | Slack Service |
 | ------------- |-------------  |
-| **[SKClient](https://github.com/SlackKit/SKClient)** | Write your own client implementation|
-| **[SKRTMAPI](https://github.com/SlackKit/SKRTMAPI)**     | Connect to the Slack RTM API|
-| **[SKServer](https://github.com/SlackKit/SKServer)**      | Spin up a server|
-| **[SKWebAPI](https://github.com/SlackKit/SKWebAPI)** | Access the Slack Web API|
+| **[SKClient](https://github.com/pvzig/SlackKit/tree/master/SKClient)** | Write your own client implementation|
+| **[SKRTMAPI](https://github.com/pvzig/SlackKit/tree/master/SKRTMAPI)**     | Connect to the Slack RTM API|
+| **[SKServer](https://github.com/pvzig/SlackKit/tree/master/SKServer)**      | Spin up a server|
+| **[SKWebAPI](https://github.com/pvzig/SlackKit/tree/master/SKWebAPI)** | Access the Slack Web API|
 
 ### Examples
-You can find the source code for several example applications [here](https://github.com/SlackKit/Examples).
+You can find the source code for several example applications [here](https://github.com/pvzig/SlackKit/tree/master/Examples).
 
 ### Tutorials
 - [Build a Slack Bot and Deploy to Heroku](https://medium.com/@pvzig/building-slack-bots-in-swift-b99e243e444c)
