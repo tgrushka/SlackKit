@@ -14,41 +14,41 @@ Pod::Spec.new do |s|
   s.swift_version           = "4.2"
   s.cocoapods_version       = ">= 1.4.0"
 
-  s.subspec "SlackKit" do |ss|
-    ss.source_files = "SlackKit/Sources"
-    ss.dependency "SlackKit/SKClient"
-    ss.dependency "SlackKit/SKCore"
-    ss.dependency "SlackKit/SKRTMAPI"
-    ss.dependency "SlackKit/SKServer"
-    ss.dependency "SlackKit/SKWebAPI"
+  s.subspec "SKCore" do |ss|
+    ss.source_files = "SKCore/Sources/"
     ss.framework = "Foundation"
   end
 
-  s.subspec "SKCore" do |ss|
-    ss.source_files = "SKCore/Sources"
+  s.subspec "SKClient" do |ss|
+    ss.source_files = "SKClient/Sources/"
+    ss.dependency "SlackKit/SKCore"
   end
 
-  s.subspec "SKClient" do |ss|
-    ss.source_files = "SKClient/Sources"
+  s.subspec "SKWebAPI" do |ss|
+    ss.source_files = "SKWebAPI/Sources/"
     ss.dependency "SlackKit/SKCore"
   end
 
   s.subspec "SKRTMAPI" do |ss|
-    ss.source_files = "SKRTMAPI/Sources"
+    ss.source_files = "SKRTMAPI/Sources/"
     ss.dependency "SlackKit/SKCore"
     ss.dependency "SlackKit/SKWebAPI"
     ss.dependency "Starscream", "3.0.6"
   end
 
   s.subspec "SKServer" do |ss|
-    ss.source_files = "SKServer/Sources"
+    ss.source_files = "SKServer/Sources/"
     ss.dependency "SlackKit/SKCore"
     ss.dependency "SlackKit/SKWebAPI"
     ss.dependency "Swifter", "1.4.5"
   end
 
-  s.subspec "SKWebAPI" do |ss|
-    ss.source_files = "SKWebAPI/Sources"
+  s.subspec "SlackKit" do |ss|
+    ss.source_files = "SlackKit/Sources/"
     ss.dependency "SlackKit/SKCore"
+    ss.dependency "SlackKit/SKClient"
+    ss.dependency "SlackKit/SKWebAPI"
+    ss.dependency "SlackKit/SKRTMAPI"
+    ss.dependency "SlackKit/SKServer"
   end
 end
