@@ -12,3 +12,5 @@
 FRAMEWORK_SEARCH_PATHS[sdk=macosx*] = "$(PROJECT_DIR)/Frameworks/macOS";
 FRAMEWORK_SEARCH_PATHS[sdk=appletvos*] = "$(PROJECT_DIR)/Frameworks/tvOS";
 FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*] = "$(PROJECT_DIR)/Frameworks/iOS";
+FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*] = "$(PROJECT_DIR)/Frameworks/iOS";
+FRAMEWORK_SEARCH_PATHS[sdk=appletvsimulator*] = "$(PROJECT_DIR)/Frameworks/tvOS";
