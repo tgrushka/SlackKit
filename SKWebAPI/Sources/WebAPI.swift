@@ -318,13 +318,9 @@ extension WebAPI {
         text: String,
         user: String,
         asUser: Bool? = nil,
-        parse: ParseMode? = nil,
-        linkNames: Bool? = nil,
         attachments: [Attachment?]? = nil,
-        unfurlLinks: Bool? = nil,
-        unfurlMedia: Bool? = nil,
-        iconURL: String? = nil,
-        iconEmoji: String? = nil,
+        linkNames: Bool? = nil,
+        parse: ParseMode? = nil,
         success: (((ts: String?, channel: String?)) -> Void)?,
         failure: FailureClosure?
         ) {
