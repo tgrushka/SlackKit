@@ -153,7 +153,7 @@ public class Event {
     public let channel: Channel?
     public let comment: Comment?
     public let user: User?
-    public let file: File?
+    public let files: [File]
     public let message: Message?
     public let nestedMessage: Message?
     public let itemUser: String?
@@ -197,7 +197,7 @@ public class Event {
         message = Message(dictionary: event)
         nestedMessage = Message(dictionary: event["message"] as? [String: Any])
         profile = CustomProfile(profile: event["profile"] as? [String: Any])
-        file = File(id: event["file"] as? String)
+        files = (event["files"] as? [Any])?.compactMap { File(file: $0 as? [String: Any]) } ?? []
 
         // Comment, Channel, and User can come across as Strings or Dictionaries
         if let commentDictionary = event["comment"] as? [String: Any] {

@@ -397,76 +397,82 @@ extension Client {
 // MARK: - Files
 extension Client {
     func processFile(_ event: Event) {
-        guard
-            let file = event.file,
-            let id = file.id
-        else {
-            return
-        }
-        if let comment = file.initialComment, let commentID = comment.id {
-            if files[id]?.comments[commentID] == nil {
-                files[id]?.comments[commentID] = comment
+        for file in event.files {
+            guard
+                let id = file.id
+            else {
+                continue
             }
+            if let comment = file.initialComment, let commentID = comment.id {
+                if files[id]?.comments[commentID] == nil {
+                    files[id]?.comments[commentID] = comment
+                }
+            }
+            files[id] = file
         }
-        files[id] = file
     }
 
     func filePrivate(_ event: Event) {
-        guard
-            let file =  event.file,
-            let id = file.id
-        else {
-            return
+        for file in event.files {
+            guard
+                let id = file.id
+            else {
+                continue
+            }
+            files[id]?.isPublic = false
         }
-        files[id]?.isPublic = false
     }
 
     func deleteFile(_ event: Event) {
-        guard
-            let file = event.file,
-            let id = file.id
-        else {
-            return
-        }
-        if files[id] != nil {
-            files.removeValue(forKey: id)
+        for file in event.files {
+            guard
+                let id = file.id
+            else {
+                continue
+            }
+            if files[id] != nil {
+                files.removeValue(forKey: id)
+            }
         }
     }
 
     func fileCommentAdded(_ event: Event) {
-        guard
-            let file = event.file,
-            let id = file.id,
-            let comment = event.comment,
-            let commentID = comment.id
-        else {
-            return
+        for file in event.files {
+            guard
+                let id = file.id,
+                let comment = event.comment,
+                let commentID = comment.id
+            else {
+                continue
+            }
+            files[id]?.comments[commentID] = comment
         }
-        files[id]?.comments[commentID] = comment
     }
 
     func fileCommentEdited(_ event: Event) {
-        guard
-            let file = event.file,
-            let id = file.id,
-            let comment = event.comment,
-            let commentID = comment.id
-        else {
-            return
+        for file in event.files {
+            guard
+                let id = file.id,
+                let comment = event.comment,
+                let commentID = comment.id
+            else {
+                continue
+            }
+            files[id]?.comments[commentID]?.comment = comment.comment
         }
-        files[id]?.comments[commentID]?.comment = comment.comment
     }
 
     func fileCommentDeleted(_ event: Event) {
-        guard
-            let file = event.file,
-            let id = file.id,
-            let comment = event.comment,
-            let commentID = comment.id
-        else {
-            return
+        for file in event.files {
+            guard
+                let id = file.id,
+                let comment = event.comment,
+                let commentID = comment.id
+            else {
+                continue
+            }
+            _ = files[id]?.comments.removeValue(forKey: commentID)
         }
-        _ = files[id]?.comments.removeValue(forKey: commentID)
     }
 }
 
