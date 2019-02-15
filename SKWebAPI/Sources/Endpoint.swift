@@ -35,6 +35,7 @@ public enum Endpoint: String {
     case channelsSetTopic = "channels.setTopic"
     case chatDelete = "chat.delete"
     case chatPostMessage = "chat.postMessage"
+    case chatPostEphemeral = "chat.postEphemeral"
     case chatMeMessage = "chat.meMessage"
     case chatUpdate = "chat.update"
     case conversationsList = "conversations.list"
