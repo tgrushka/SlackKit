@@ -1079,6 +1079,40 @@ extension WebAPI {
         }
     }
 
+    public func usersProfileSet(profile: User.Profile, success: SuccessClosure?, failure: FailureClosure?) {
+        let profileValues = ([
+            "first_name": profile.firstName,
+            "last_name": profile.lastName,
+            "real_name": profile.realName,
+            "email": profile.email,
+            "phone": profile.phone,
+            "status_text": profile.statusText,
+            "status_emoji": profile.statusEmoji,
+            "status_expiration": profile.statusExpiration,
+        ] as [String: Any?])
+        .filter { $0.value != nil }
+        .mapValues { $0! }
+
+        do {
+            let data = try JSONSerialization.data(withJSONObject: profileValues)
+            let json = String(data: data, encoding: .utf8)! as NSString
+            let encodedJSON = json.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            var urlComponents = URLComponents(string: "https://slack.com/api/users.profile.set")!
+            urlComponents.queryItems = [URLQueryItem(name: "token", value: token),
+                                        URLQueryItem(name: "profile", value: encodedJSON)]
+
+            networkInterface.customRequest(urlComponents.url!.absoluteString, data: Data(), success: { _ in
+                success?(true)
+            }) {(error) in
+                failure?(error)
+            }
+        }
+        catch {
+            failure?(error as? SlackError ?? SlackError.unknownError)
+            return
+        }
+    } 
+
     public func setUserActive(success: SuccessClosure?, failure: FailureClosure?) {
         networkInterface.request(.usersSetActive, parameters: ["token": token], successClosure: { _ in
             success?(true)
