@@ -312,6 +312,34 @@ extension WebAPI {
             failure?(error)
         }
     }
+    
+    public func sendEphemeral(
+        channel: String,
+        text: String,
+        user: String,
+        asUser: Bool? = nil,
+        attachments: [Attachment?]? = nil,
+        linkNames: Bool? = nil,
+        parse: ParseMode? = nil,
+        success: (((ts: String?, channel: String?)) -> Void)?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any?] = [
+            "token": token,
+            "channel": channel,
+            "text": text,
+            "user": user,
+            "as_user": asUser,
+            "attachments": encodeAttachments(attachments),
+            "link_names": linkNames,
+            "parse": parse?.rawValue,
+            ]
+        networkInterface.request(.chatPostEphemeral, parameters: parameters, successClosure: {(response) in
+            success?((ts: response["sendMessage"] as? String, response["channel"] as? String))
+        }) {(error) in
+            failure?(error)
+        }
+    }
 
     public func sendMeMessage(
         channel: String,
