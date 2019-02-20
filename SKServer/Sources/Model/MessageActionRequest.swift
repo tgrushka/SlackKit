@@ -21,7 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if !COCOAPODS
 import SKCore
+#endif
 
 public struct MessageActionRequest {
     public let action: Action?

@@ -22,7 +22,9 @@
 // THE SOFTWARE.
 
 import Foundation
+#if !COCOAPODS
 import SKCore
+#endif
 
 public struct SKResponse {
     let text: String

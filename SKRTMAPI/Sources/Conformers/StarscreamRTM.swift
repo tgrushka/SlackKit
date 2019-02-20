@@ -23,7 +23,9 @@
 
 #if os(macOS) || os(iOS) || os(tvOS)
 import Foundation
+#if !COCOAPODS
 import SKCore
+#endif
 import Starscream
 
 public class StarscreamRTM: RTMWebSocket, WebSocketDelegate {

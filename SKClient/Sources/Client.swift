@@ -25,7 +25,9 @@
 import Dispatch
 #endif
 import Foundation
+#if !COCOAPODS
 @_exported import SKCore
+#endif
 
 open class Client {
     internal(set) public var authenticatedUser: User?

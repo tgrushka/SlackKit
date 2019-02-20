@@ -25,8 +25,10 @@
 import Dispatch
 #endif
 import Foundation
+#if !COCOAPODS
 import SKWebAPI
 @_exported import SKCore
+#endif
 
 public protocol RTMWebSocket {
     init()

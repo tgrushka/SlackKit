@@ -21,7 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if !COCOAPODS
 @_exported import SKCore
+#endif
 
 public protocol SlackKitServer {
     func start()

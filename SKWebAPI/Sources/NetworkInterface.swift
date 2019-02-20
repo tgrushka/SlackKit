@@ -25,7 +25,9 @@
     import Dispatch
 #endif
 import Foundation
+#if !COCOAPODS
 import SKCore
+#endif
 
 public struct NetworkInterface {
 
