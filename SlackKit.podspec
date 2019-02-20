@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
 
   s.subspec "SKRTMAPI" do |ss|
     ss.source_files = "SKRTMAPI/Sources/**/*.swift"
+    ss.exclude_files = "SKRTMAPI/Sources/Conformers/VaporEngineRTM.swift"
     ss.dependency "SlackKit/SKCore"
     ss.dependency "SlackKit/SKWebAPI"
     ss.dependency "Starscream", "3.0.6"
