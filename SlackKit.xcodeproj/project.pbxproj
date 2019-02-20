@@ -98,6 +98,12 @@
 		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		26D4E4D92210A33A00A67B67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18362204057900F1F500 /* main.swift */; };
+		26D4E605221211FD00A67B67 /* SlackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E602221211B900A67B67 /* SlackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26D4E6062212120100A67B67 /* SKClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FF221211B900A67B67 /* SKClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26D4E6072212120500A67B67 /* SKCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E603221211B900A67B67 /* SKCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26D4E6082212120900A67B67 /* SKRTMAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FE221211B900A67B67 /* SKRTMAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26D4E6092212120F00A67B67 /* SKServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E600221211B900A67B67 /* SKServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26D4E60A2212121400A67B67 /* SKWebAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E601221211B900A67B67 /* SKWebAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -220,6 +226,13 @@
 		269A18332204055200F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		269A18362204057900F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26D4E4D82210A31F00A67B67 /* Robot or Not Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot or Not Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D4E5FE221211B900A67B67 /* SKRTMAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRTMAPI.h; sourceTree = "<group>"; };
+		26D4E5FF221211B900A67B67 /* SKClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKClient.h; sourceTree = "<group>"; };
+		26D4E600221211B900A67B67 /* SKServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKServer.h; sourceTree = "<group>"; };
+		26D4E601221211B900A67B67 /* SKWebAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKWebAPI.h; sourceTree = "<group>"; };
+		26D4E602221211B900A67B67 /* SlackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlackKit.h; sourceTree = "<group>"; };
+		26D4E603221211B900A67B67 /* SKCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCore.h; sourceTree = "<group>"; };
+		26D4E604221211B900A67B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +317,7 @@
 				263B0FC521FE23C200AF9EF9 /* SKRTMAPI */,
 				263B0FDF21FE23DB00AF9EF9 /* SKServer */,
 				263B0FB821FE23B000AF9EF9 /* SKWebAPI */,
+				26D4E5FD221211B900A67B67 /* Supporting Files */,
 				269A18272204048300F1F500 /* Examples */,
 				263B10CB21FE4DD900AF9EF9 /* Frameworks */,
 				263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */,
@@ -684,6 +698,20 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		26D4E5FD221211B900A67B67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26D4E602221211B900A67B67 /* SlackKit.h */,
+				26D4E5FF221211B900A67B67 /* SKClient.h */,
+				26D4E603221211B900A67B67 /* SKCore.h */,
+				26D4E5FE221211B900A67B67 /* SKRTMAPI.h */,
+				26D4E600221211B900A67B67 /* SKServer.h */,
+				26D4E601221211B900A67B67 /* SKWebAPI.h */,
+				26D4E604221211B900A67B67 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -691,6 +719,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E6072212120500A67B67 /* SKCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +727,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E6062212120100A67B67 /* SKClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +735,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E60A2212121400A67B67 /* SKWebAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +743,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E6082212120900A67B67 /* SKRTMAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +751,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E605221211FD00A67B67 /* SlackKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +759,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D4E6092212120F00A67B67 /* SKServer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,7 +1280,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1276,7 +1310,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1306,7 +1340,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1336,7 +1371,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1366,7 +1402,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1396,7 +1433,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1428,7 +1466,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1460,7 +1498,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1491,7 +1529,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1523,7 +1561,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1555,7 +1593,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1587,7 +1625,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(PROJECT_DIR)/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

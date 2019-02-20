@@ -21,8 +21,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if !COCOAPODS
 import SKCore
 import SKWebAPI
+#endif
 
 public struct OAuthMiddleware: Middleware {
     private let config: OAuthConfig
