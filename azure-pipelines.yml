@@ -7,7 +7,8 @@ trigger:
 - master
 
 jobs:
-- job: macOS
+# Builds
+- job: macOS Build & Test
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -19,7 +20,15 @@ jobs:
       configuration: 'Release'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: iOS
+  - task: Xcode@5
+    inputs:
+      actions: 'test'
+      scheme: 'SlackKitTests'
+      sdk: 'macosx'
+      configuration: 'Debug'
+      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcodeVersion: '10'
+- job: iOS Build & Test
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -31,7 +40,15 @@ jobs:
       configuration: 'Release'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: tvOS
+  - task: Xcode@5
+    inputs:
+      actions: 'test'
+      scheme: 'SlackKitTests'
+      sdk: 'iphoneos'
+      configuration: 'Debug'
+      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcodeVersion: '10'
+- job: tvOS Build & Test
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -43,7 +60,15 @@ jobs:
       configuration: 'Release'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: Linux
+  - task: Xcode@5
+    inputs:
+      actions: 'test'
+      scheme: 'SlackKitTests'
+      sdk: 'appletvos'
+      configuration: 'Debug'
+      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcodeVersion: '10'
+- job: Linux Build & Test
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
@@ -55,3 +80,5 @@ jobs:
       tar xzf swift-4.2.1-RELEASE-ubuntu16.04.tar.gz -C $(Build.SourcesDirectory)
       # Swift build
       $(Build.SourcesDirectory)/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift build
+      # Swift test
+      $(Build.SourcesDirectory)/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift test
