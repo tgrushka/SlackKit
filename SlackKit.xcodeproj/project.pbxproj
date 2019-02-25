@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2601B6C9222087BD00F197AB /* SKCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4E6362220733F00A67B67 /* SKCoreTests.swift */; };
 		2601B6CD2223038A00F197AB /* channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6282220731800A67B67 /* channel.json */; };
 		2601B6CE2223038A00F197AB /* conversation.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6222220731700A67B67 /* conversation.json */; };
 		2601B6CF2223038A00F197AB /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6262220731800A67B67 /* events.json */; };
@@ -19,6 +18,7 @@
 		2601B6D52223038A00F197AB /* rtm.start.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6202220731700A67B67 /* rtm.start.json */; };
 		2601B6D62223038A00F197AB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6242220731800A67B67 /* user.json */; };
 		2601B6D72223038A00F197AB /* usergroup.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6252220731800A67B67 /* usergroup.json */; };
+		2601B6E2222371A100F197AB /* SKCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4E6362220733F00A67B67 /* SKCoreTests.swift */; };
 		263B102421FE33A000AF9EF9 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100921FE33A000AF9EF9 /* UserGroup.swift */; };
 		263B102521FE33A000AF9EF9 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100A21FE33A000AF9EF9 /* Scope.swift */; };
 		263B102621FE33A000AF9EF9 /* AttachmentField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100B21FE33A000AF9EF9 /* AttachmentField.swift */; };
@@ -306,7 +306,6 @@
 		26D4E62A2220731800A67B67 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		26D4E6362220733F00A67B67 /* SKCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCoreTests.swift; sourceTree = "<group>"; };
 		26D4E6372220733F00A67B67 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		26D4E63C2220736900A67B67 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -798,7 +797,6 @@
 		26D4E6112220719D00A67B67 /* SlackKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				26D4E63C2220736900A67B67 /* LinuxMain.swift */,
 				26D4E6372220733F00A67B67 /* XCTestManifests.swift */,
 				26D4E61A222072BC00A67B67 /* SlackKit */,
 				26D4E61B222072C600A67B67 /* SKClient */,
@@ -1232,7 +1230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2601B6C9222087BD00F197AB /* SKCoreTests.swift in Sources */,
+				2601B6E2222371A100F197AB /* SKCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,9 +1416,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
 				);
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SlackKitTests;
@@ -1445,9 +1444,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
 				);
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchsoft.SlackKitTests;
