@@ -25,7 +25,7 @@ import PackageDescription
   
 let package = Package(
 	dependencies: [
-		.package(url: "https://github.com/SlackKit/SlackKit.git", .upToNextMinor(from: "4.2.0"))
+		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0"))
 	]
 )
 ```
