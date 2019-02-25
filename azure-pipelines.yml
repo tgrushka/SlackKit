@@ -8,7 +8,7 @@ trigger:
 
 jobs:
 # Builds
-- job: macOS Build and Test
+- job: macOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -28,7 +28,7 @@ jobs:
       configuration: 'Debug'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: iOS Build and Test
+- job: iOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -48,7 +48,7 @@ jobs:
       configuration: 'Debug'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: tvOS Build and Test
+- job: tvOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
@@ -68,7 +68,7 @@ jobs:
       configuration: 'Debug'
       xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
       xcodeVersion: '10'
-- job: Linux Build and Test
+- job: Linux
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
