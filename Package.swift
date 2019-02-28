@@ -47,6 +47,9 @@ let SKWebAPI: Target = .target(name: "SKWebAPI",
                                dependencies: ["SKCore"],
                                path: "SKWebAPI/Sources")
 
+let SlackKitTests: Target = .testTarget(name: "SlackKitTests",
+                                        dependencies: ["SlackKit", "SKCore", "SKClient", "SKRTMAPI", "SKServer"],
+                                        path: "SlackKitTests")
 // MARK: Package
 
 let package = Package(
@@ -60,7 +63,7 @@ let package = Package(
         .library(name: "SKWebAPI", targets: ["SKWebAPI"])
     ],
     targets: [
-        SlackKit, SKClient, SKCore, SKRTMAPI, SKServer, SKWebAPI
+        SlackKit, SKClient, SKCore, SKRTMAPI, SKServer, SKWebAPI, SlackKitTests
     ]
 )
 

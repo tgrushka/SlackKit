@@ -23,7 +23,9 @@
 
 //swiftlint:disable file_length
 import Foundation
+#if !COCOAPODS
 @_exported import SKCore
+#endif
 
 public final class WebAPI {
 
@@ -1123,23 +1125,29 @@ extension WebAPI {
 
         do {
             let data = try JSONSerialization.data(withJSONObject: profileValues)
-            let json = String(data: data, encoding: .utf8)! as NSString
-            let encodedJSON = json.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-            var urlComponents = URLComponents(string: "https://slack.com/api/users.profile.set")!
-            urlComponents.queryItems = [URLQueryItem(name: "token", value: token),
-                                        URLQueryItem(name: "profile", value: encodedJSON)]
+            let json = String(data: data, encoding: .utf8)
+            guard let encodedJSON = json?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                throw SlackError.clientJSONError
+            }
+            var urlComponents = URLComponents(string: "https://slack.com/api/users.profile.set")
+            urlComponents?.queryItems = [
+                URLQueryItem(name: "token", value: token),
+                URLQueryItem(name: "profile", value: encodedJSON)
+            ]
 
-            networkInterface.customRequest(urlComponents.url!.absoluteString, data: Data(), success: { _ in
+            guard let requestString = urlComponents?.url?.absoluteString else {
+                throw SlackError.clientNetworkError
+            }
+
+            networkInterface.customRequest(requestString, data: Data(), success: { _ in
                 success?(true)
             }) {(error) in
                 failure?(error)
             }
-        }
-        catch {
+        } catch {
             failure?(error as? SlackError ?? SlackError.unknownError)
-            return
         }
-    } 
+    }
 
     public func setUserActive(success: SuccessClosure?, failure: FailureClosure?) {
         networkInterface.request(.usersSetActive, parameters: ["token": token], successClosure: { _ in

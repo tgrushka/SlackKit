@@ -22,11 +22,13 @@
 // THE SOFTWARE.
 
 import Foundation
+#if !COCOAPODS
 @_exported import SKClient
 @_exported import SKCore
 @_exported import SKRTMAPI
 @_exported import SKServer
 @_exported import SKWebAPI
+#endif
 
 public final class SlackKit: RTMAdapter {
 

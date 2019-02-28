@@ -47,7 +47,7 @@ public final class Message: Equatable {
     public var isStarred: Bool?
     public var pinnedTo: [String]?
     public let comment: Comment?
-    public let file: File?
+    public var files: [File]?
     public var reactions = [Reaction]()
     public var attachments: [Attachment]?
     public var responseType: MessageResponseType?
@@ -79,7 +79,7 @@ public final class Message: Equatable {
         isStarred = dictionary?["is_starred"] as? Bool
         pinnedTo = dictionary?["pinned_to"] as? [String]
         comment = Comment(comment: dictionary?["comment"] as? [String: Any])
-        file = File(file: dictionary?["file"] as? [String: Any])
+        files = (dictionary?["files"] as? [[String: Any]])?.map { File(file: $0) }
         reactions = Reaction.reactionsFromArray(dictionary?["reactions"] as? [[String: Any]])
         attachments = (dictionary?["attachments"] as? [[String: Any]])?.map { Attachment(attachment: $0) }
         responseType = MessageResponseType(rawValue: dictionary?["response_type"] as? String ?? "")
@@ -101,7 +101,6 @@ public final class Message: Equatable {
         upload = nil
         itemType = nil
         comment = nil
-        file = nil
     }
 
     public static func == (lhs: Message, rhs: Message) -> Bool {
