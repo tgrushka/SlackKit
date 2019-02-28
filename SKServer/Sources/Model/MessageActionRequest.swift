@@ -43,7 +43,7 @@ public struct MessageActionRequest {
         callbackID = response?["callback_id"] as? String
         team = Team(team: response?["team"] as? [String: Any])
         channel = Channel(channel: response?["channel"] as? [String: Any])
-        user = User(user: response?["channel"] as? [String: Any])
+        user = User(user: response?["user"] as? [String: Any])
         actionTS = response?["action_ts"] as? String
         messageTS = response?["message_ts"] as? String
         attachmentID = response?["attachment_id"] as? String
