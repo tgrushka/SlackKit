@@ -311,7 +311,6 @@
 		26D4E6292220731800A67B67 /* rtm.connect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rtm.connect.json; sourceTree = "<group>"; };
 		26D4E62A2220731800A67B67 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		26D4E6362220733F00A67B67 /* SKCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCoreTests.swift; sourceTree = "<group>"; };
-		26D4E6372220733F00A67B67 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -803,7 +802,6 @@
 		26D4E6112220719D00A67B67 /* SlackKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				26D4E6372220733F00A67B67 /* XCTestManifests.swift */,
 				26D4E61A222072BC00A67B67 /* SlackKit */,
 				26D4E61B222072C600A67B67 /* SKClient */,
 				26D4E61C222072D100A67B67 /* SKCore */,

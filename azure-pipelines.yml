@@ -81,5 +81,4 @@ jobs:
       # Swift build
       $(Build.SourcesDirectory)/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift build
       # Swift test
-      $(Build.SourcesDirectory)/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift test --generate-linuxmain
       $(Build.SourcesDirectory)/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift test
