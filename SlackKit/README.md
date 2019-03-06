@@ -1,41 +1,30 @@
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/8311605/24083714/e921a0d4-0cb2-11e7-8384-d42113ef5056.png" alt="SlackKit" width="500"/></p>
-
-![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://cocoapods.org)
-
-## SlackKit: Slack Apps in Swift
-### Description
-
-SlackKit makes it easy to build Slack apps in Swift.
-
-It's intended to expose all of the functionality of Slack's [Real Time Messaging API](https://api.slack.com/rtm) as well as the [web APIs](https://api.slack.com/web) that are accessible to [bot users](https://api.slack.com/bot-users). SlackKit also supports Slack’s [OAuth 2.0](https://api.slack.com/docs/oauth) flow including the [Add to Slack](https://api.slack.com/docs/slack-button) and [Sign in with Slack](https://api.slack.com/docs/sign-in-with-slack) buttons, [incoming webhooks](https://api.slack.com/incoming-webhooks), [slash commands](https://api.slack.com/slash-commands), and [message buttons](https://api.slack.com/docs/message-buttons).
-
+# SlackKit: Slack Apps in Swift
 ### Installation
 
 #### Swift Package Manager
 
 Add `SlackKit` to your `Package.swift`
 
-```swift
-import PackageDescription
-  
+```swift  
 let package = Package(
 	dependencies: [
-		.package(url: "https://github.com/SlackKit/SlackKit.git", .upToNextMinor(from: "4.1.0"))
+		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0"))
 	]
 )
 ```
+
+**When built using Swift Package Manager, SlackKit includes the [vapor websocket framework](https://github.com/vapor/websocket) by default which requires libressl.**
+
+You can install it with [homebrew](https://brew.sh): `brew install libressl`
+
+For additional details, see the [SKRTMAPI readme](https://github.com/pvzig/SlackKit/tree/master/SKRTMAPI#swift-package-manager).
 
 #### Carthage
 
 Add `SlackKit` to your `Cartfile`:
 
 ```
-github "SlackKit/SlackKit"
+github "pvzig/SlackKit"
 ```
 
 #### CocoaPods
@@ -46,6 +35,20 @@ pod 'SlackKit'
 ```
 
 ### Usage
+To use the library in your project import it:
+
+#### Carthage & SPM
+
+```swift
+import SKWebAPI
+```
+
+#### CocoaPods
+
+```swift
+import SlackKit
+```
+
 #### The Basics
 Create a bot user with an API token:
 
@@ -124,84 +127,3 @@ Slack has [many different oauth scopes](https://api.slack.com/docs/oauth-scopes)
 If you authenticate using OAuth and the Add to Slack or Sign in with Slack buttons this is handled for you.
 
 For local development of things like OAuth, slash commands, and message buttons, you may want to use a tool like [ngrok](https://ngrok.com).
-
-#### Web API Methods
-SlackKit currently supports the a subset of the Slack Web APIs that are available to bot users:
-
-| Web APIs      |
-| ------------- |
-| `api.test`|
-| `api.revoke`|
-| `auth.test`|
-| `channels.history`|
-| `channels.info`|
-| `channels.list`|
-| `channels.mark`|
-| `channels.setPurpose`|
-| `channels.setTopic`|
-| `chat.delete`|
-| `chat.meMessage`|
-| `chat.postMessage`|
-| `chat.update`|
-| `emoji.list`|
-| `files.comments.add`|
-| `files.comments.edit`|
-| `files.comments.delete`|
-| `files.delete`|
-| `files.info`|
-| `files.upload`|
-| `groups.close`|
-| `groups.history`|
-| `groups.info`|
-| `groups.list`|
-| `groups.mark`|
-| `groups.open`|
-| `groups.setPurpose`|
-| `groups.setTopic`|
-| `im.close`|
-| `im.history`|
-| `im.list`|
-| `im.mark`|
-| `im.open`|
-| `mpim.close`|
-| `mpim.history`|
-| `mpim.list`|
-| `mpim.mark`|
-| `mpim.open`|
-| `oauth.access`|
-| `pins.add`|
-| `pins.list`|
-| `pins.remove`|
-| `reactions.add`|
-| `reactions.get`|
-| `reactions.list`|
-| `reactions.remove`|
-| `rtm.start`|
-| `stars.add`|
-| `stars.remove`|
-| `team.info`|
-| `users.getPresence`|
-| `users.info`|
-| `users.list`|
-| `users.setActive`|
-| `users.setPresence`|
-
-Don’t need the whole banana? Want more control over the low-level implementation details? Use the extensible modules SlackKit is built on:
-
-| Module        | Slack Service |
-| ------------- |-------------  |
-| **[SKClient](https://github.com/SlackKit/SKClient)** | Write your own client implementation|
-| **[SKRTMAPI](https://github.com/SlackKit/SKRTMAPI)**     | Connect to the Slack RTM API|
-| **[SKServer](https://github.com/SlackKit/SKServer)**      | Spin up a server|
-| **[SKWebAPI](https://github.com/SlackKit/SKWebAPI)** | Access the Slack Web API|
-
-### Examples
-You can find the source code for several example applications [here](https://github.com/SlackKit/Examples).
-
-### Tutorials
-- [Build a Slack Bot and Deploy to Heroku](https://medium.com/@pvzig/building-slack-bots-in-swift-b99e243e444c)
-
-### Get In Touch
-Twitter: [@pvzig](https://twitter.com/pvzig)
-
-Email: <peter@launchsoft.co>

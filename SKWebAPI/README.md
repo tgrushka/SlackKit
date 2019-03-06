@@ -1,36 +1,24 @@
-# SKWebAPI: SlackKit Web API Module
-![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://cocoapods.org)
+# SKWebAPI
 
-A Swift module to help make requests to the [Slack Web API](https://api.slack.com/web).
+Make requests to the [Slack Web API](https://api.slack.com/web) in Swift.
 
 ## Installation
 
 ### CocoaPods
 
-Add SKWebAPI to your pod file:
+Add SKWebAPI to your `Podfile`:
 
 ```
 use_frameworks!
-pod 'SKWebAPI'
-```
-and run
-
-```
-# Use CocoaPods version >= 1.4.0
-pod install
+pod 'SlackKit/SKWebAPI'
 ```
 
 ### Carthage
 
-Add SKWebAPI to your Cartfile:
+Add SlackKit to your `Cartfile`:
 
 ```
-github "SlackKit/SKWebAPI"
+github "pvzig/SlackKit"
 ```
 and run
 
@@ -38,31 +26,50 @@ and run
 carthage bootstrap
 ```
 
-Drag the built `SKWebAPI.framework` into your Xcode project.
+Drag the built `SKWebAPI.framework` and it's dependency `SKCore.framework` into your Xcode project.
 
 ### Swift Package Manager
 
-Add SKWebAPI to your Package.swift
+Add SlackKit as a dependency to your `Package.swift` and specify `SKWebAPI` as a target dependency:
 
 ```swift
 import PackageDescription
   
 let package = Package(
-	dependencies: [
-		.package(url: "https://github.com/SlackKit/SKWebAPI.git", .upToNextMinor(from: "4.1.0"))
-	]
+    name: "SampleApp",
+    products: [
+        .executable(
+            name: "SampleApp",
+            targets: ["SampleApp"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0")),
+    ],
+    targets: [
+        .target(
+            name: "SampleApp",
+            dependencies: ["SKWebAPI"])
+    ]
 )
+
 ```
 
-Run `swift build` on your application’s main directory.
-
+## Usage
 To use the library in your project import it:
+
+#### Carthage & SPM
 
 ```swift
 import SKWebAPI
 ```
 
-## Usage
+#### CocoaPods
+
+```swift
+import SlackKit
+```
+
+### The Basics
 Initialize an instance of `SKWebAPI` with a Slack auth token and make your requests:
 
 ```swift

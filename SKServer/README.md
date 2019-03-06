@@ -1,12 +1,5 @@
-# SKServer: SlackKit Server Module
-![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://cocoapods.org)
-
-A server-side Swift module for creating Slack apps.
+# SKServer
+A server-side Swift framework for creating Slack apps.
 
 ## Installation
 
@@ -16,21 +9,15 @@ Add SKServer to your pod file:
 
 ```
 use_frameworks!
-pod 'SKServer'
-```
-and run
-
-```
-# Use CocoaPods version >= 1.4.0
-pod install
+pod 'SlackKit/SKServer'
 ```
 
 ### Carthage
 
-Add SKServer to your Cartfile:
+Add SlackKit to your Cartfile:
 
 ```
-github "SlackKit/SKServer"
+github "pvzig/SlackKit"
 ```
 and run
 
@@ -38,31 +25,48 @@ and run
 carthage bootstrap
 ```
 
-Drag the built `SKServer.framework` into your Xcode project.
+Drag the built `SKServer.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Swifter.framework` into your Xcode project.
 
 ### Swift Package Manager
 
-Add SKServer to your Package.swift
+Add SlackKit as a dependency to your `Package.swift` and specify `SKServer` as a target dependency:
 
 ```swift
 import PackageDescription
   
 let package = Package(
-	dependencies: [
-		.package(url: "https://github.com/SlackKit/SKServer.git", .upToNextMinor(from: "4.1.0"))
-	]
+    name: "SampleApp",
+    products: [
+        .executable(
+            name: "SampleApp",
+            targets: ["SampleApp"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0")),
+    ],
+    targets: [
+        .target(
+            name: "SampleApp",
+            dependencies: ["SKServer"])
+    ]
 )
+
 ```
 
-Run `swift build` on your application’s main directory.
-
+## Usage
 To use the library in your project import it:
+
+#### Carthage & SPM
 
 ```swift
 import SKServer
 ```
 
-## Usage
+#### CocoaPods
+
+```swift
+import SlackKit
+```
 
 ### The Basics
 For local development and testing of features like OAuth, slash commands, and message buttons that require connecting over https, you may want to use a tool like [ngrok](https://ngrok.com/).

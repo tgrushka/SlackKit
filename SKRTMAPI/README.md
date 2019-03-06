@@ -1,36 +1,24 @@
-# SKRTMAPI: SlackKit RTM Module
-![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://cocoapods.org)
+# SKRTMAPI
 
-A module for connecting to the [Slack Real Time Messaging API](https://api.slack.com/rtm).
+Connect to the [Slack Real Time Messaging API](https://api.slack.com/rtm) in Swift.
 
 ## Installation
 
 ### CocoaPods
 
-Add SKRTMAPI to your pod file:
+Add SKRTMAPI to your `Podfile`:
 
 ```
 use_frameworks!
-pod 'SKRTMAPI'
-```
-and run
-
-```
-# Use CocoaPods version >= 1.4.0
-pod install
+pod 'SlackKit/SKRTMAPI'
 ```
 
 ### Carthage
 
-Add SKRTMAPI to your Cartfile:
+Add SlackKit to your `Cartfile`:
 
 ```
-github "SlackKit/SKRTMAPI"
+github "pvzig/SlackKit"
 ```
 and run
 
@@ -38,31 +26,69 @@ and run
 carthage bootstrap
 ```
 
-Drag the built `SKRTMAPI.framework` into your Xcode project.
+Drag the built `SKRTMAPI.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Starscream.framework` into your Xcode project.
 
 ### Swift Package Manager
 
-Add SKRTMAPI to your Package.swift
+Add SlackKit as a dependency to your `Package.swift` and specify `SKRTMAPI` as a target dependency:
 
 ```swift
 import PackageDescription
   
 let package = Package(
-	dependencies: [
-		.package(url: "https://github.com/SlackKit/SKRTMAPI.git", .upToNextMinor(from: "4.1.0"))
-	]
+    name: "SampleApp",
+    products: [
+        .executable(
+            name: "SampleApp",
+            targets: ["SampleApp"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0")),
+    ],
+    targets: [
+        .target(
+            name: "SampleApp",
+            dependencies: ["SKRTMAPI"])
+    ]
 )
+
 ```
 
-Run `swift build` on your application’s main directory.
+**When built using Swift Package Manager, SKRTMAPI includes the [vapor websocket framework](https://github.com/vapor/websocket) by default which requires libressl.**
 
+You can install it with [homebrew](https://brew.sh): `brew install libressl`
+
+If you'd like to use SPM _without vapor websocket_, you can modify the [Package.swift](https://github.com/pvzig/SlackKit/blob/master/Package.swift#L18) file to exclude it:
+
+```swift
+let SKRTMAPI: Target = .target(name: "SKRTMAPI",
+                               path: "SKRTMAPI/Sources",
+                               exclude: ["Conformers/VaporEngineRTM.swift"])
+
+#if os(macOS)
+SKRTMAPI.dependencies = [
+    "SKCore",
+    "SKWebAPI",
+    "Starscream"
+]
+```
+
+## Usage
 To use the library in your project import it:
+
+#### Carthage & SPM
 
 ```swift
 import SKRTMAPI
 ```
 
-## Usage
+#### CocoaPods
+
+```swift
+import SlackKit
+```
+
+### The Basics
 Initialize an instance of `SKRTMAPI` with a Slack auth token:
 
 ```swift

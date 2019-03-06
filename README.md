@@ -1,7 +1,9 @@
 <p align="center"><img src="https://cloud.githubusercontent.com/assets/8311605/24083714/e921a0d4-0cb2-11e7-8384-d42113ef5056.png" alt="SlackKit" width="500"/></p>
 
+[![Build Status](https://dev.azure.com/pzignego/SlackKit/_apis/build/status/pvzig.SlackKit?branchName=master)](https://dev.azure.com/pzignego/SlackKit/_build/latest?definitionId=2&branchName=master)
+
 ![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)
-![Plaforms](https://img.shields.io/badge/Platforms-macOS,iOS,tvOS,Linux-lightgrey.svg)
+![Plaforms](https://img.shields.io/badge/Platforms-macOS,_iOS,_tvOS,_Linux-lightgrey.svg)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
@@ -20,15 +22,19 @@ It's intended to expose all of the functionality of Slack's [Real Time Messaging
 
 Add `SlackKit` to your `Package.swift`
 
-```swift
-import PackageDescription
-  
+```swift  
 let package = Package(
 	dependencies: [
 		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0"))
 	]
 )
 ```
+
+**When built using Swift Package Manager, SlackKit includes the [vapor websocket framework](https://github.com/vapor/websocket) by default which requires libressl.**
+
+You can install it with [homebrew](https://brew.sh): `brew install libressl`
+
+For additional details, see the [SKRTMAPI readme](https://github.com/pvzig/SlackKit/tree/master/SKRTMAPI#swift-package-manager).
 
 #### Carthage
 
@@ -46,6 +52,12 @@ pod 'SlackKit'
 ```
 
 ### Usage
+To use the library in your project import it:
+
+```swift
+import SlackKit
+```
+
 #### The Basics
 Create a bot user with an API token:
 
@@ -124,75 +136,14 @@ Slack has [many different oauth scopes](https://api.slack.com/docs/oauth-scopes)
 If you authenticate using OAuth and the Add to Slack or Sign in with Slack buttons this is handled for you.
 
 For local development of things like OAuth, slash commands, and message buttons, you may want to use a tool like [ngrok](https://ngrok.com).
+#### Advanced Usage
+Don’t need the whole banana? Want more control over the low-level implementation details? Use the extensible frameworks SlackKit is built on:
 
-#### Web API Methods
-SlackKit currently supports the a subset of the Slack Web APIs that are available to bot users:
-
-| Web APIs      |
-| ------------- |
-| `api.test`|
-| `api.revoke`|
-| `auth.test`|
-| `channels.history`|
-| `channels.info`|
-| `channels.list`|
-| `channels.mark`|
-| `channels.setPurpose`|
-| `channels.setTopic`|
-| `chat.delete`|
-| `chat.meMessage`|
-| `chat.postMessage`|
-| `chat.update`|
-| `emoji.list`|
-| `files.comments.add`|
-| `files.comments.edit`|
-| `files.comments.delete`|
-| `files.delete`|
-| `files.info`|
-| `files.upload`|
-| `groups.close`|
-| `groups.history`|
-| `groups.info`|
-| `groups.list`|
-| `groups.mark`|
-| `groups.open`|
-| `groups.setPurpose`|
-| `groups.setTopic`|
-| `im.close`|
-| `im.history`|
-| `im.list`|
-| `im.mark`|
-| `im.open`|
-| `mpim.close`|
-| `mpim.history`|
-| `mpim.list`|
-| `mpim.mark`|
-| `mpim.open`|
-| `oauth.access`|
-| `pins.add`|
-| `pins.list`|
-| `pins.remove`|
-| `reactions.add`|
-| `reactions.get`|
-| `reactions.list`|
-| `reactions.remove`|
-| `rtm.start`|
-| `stars.add`|
-| `stars.remove`|
-| `team.info`|
-| `users.getPresence`|
-| `users.info`|
-| `users.list`|
-| `users.setActive`|
-| `users.setPresence`|
-
-Don’t need the whole banana? Want more control over the low-level implementation details? Use the extensible modules SlackKit is built on:
-
-| Module        | Slack Service |
+| Framework        | Description |
 | ------------- |-------------  |
 | **[SKClient](https://github.com/pvzig/SlackKit/tree/master/SKClient)** | Write your own client implementation|
 | **[SKRTMAPI](https://github.com/pvzig/SlackKit/tree/master/SKRTMAPI)**     | Connect to the Slack RTM API|
-| **[SKServer](https://github.com/pvzig/SlackKit/tree/master/SKServer)**      | Spin up a server|
+| **[SKServer](https://github.com/pvzig/SlackKit/tree/master/SKServer)**      | Spin up a server for a Slack app|
 | **[SKWebAPI](https://github.com/pvzig/SlackKit/tree/master/SKWebAPI)** | Access the Slack Web API|
 
 ### Examples
