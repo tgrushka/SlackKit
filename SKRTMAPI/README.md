@@ -3,33 +3,8 @@
 Connect to the [Slack Real Time Messaging API](https://api.slack.com/rtm) in Swift.
 
 ## Installation
-
-### CocoaPods
-
-Add SKRTMAPI to your `Podfile`:
-
-```
-use_frameworks!
-pod 'SlackKit/SKRTMAPI'
-```
-
-### Carthage
-
-Add SlackKit to your `Cartfile`:
-
-```
-github "pvzig/SlackKit"
-```
-and run
-
-```
-carthage bootstrap
-```
-
-Drag the built `SKRTMAPI.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Starscream.framework` into your Xcode project.
-
-### Swift Package Manager
-
+<details>
+  <summary><strong>Swift Package Manager</strong></summary>
 Add SlackKit as a dependency to your `Package.swift` and specify `SKRTMAPI` as a target dependency:
 
 ```swift
@@ -72,6 +47,31 @@ SKRTMAPI.dependencies = [
     "Starscream"
 ]
 ```
+</details>
+<details>
+  <summary><strong>Carthage</strong></summary>
+Add SlackKit to your `Cartfile`:
+
+```
+github "pvzig/SlackKit"
+```
+and run
+
+```
+carthage bootstrap
+```
+
+Drag the built `SKRTMAPI.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Starscream.framework` into your Xcode project.
+</details>
+<details>
+  <summary><strong>CocoaPods</strong></summary>
+Add SKRTMAPI to your `Podfile`:
+
+```
+use_frameworks!
+pod 'SlackKit/SKRTMAPI'
+```
+</details>
 
 ## Usage
 To use the library in your project import it:

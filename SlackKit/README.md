@@ -1,8 +1,9 @@
 # SlackKit: Slack Apps in Swift
+
+
 ### Installation
-
-#### Swift Package Manager
-
+<details>
+  <summary><strong>Swift Package Manager</strong></summary>
 Add `SlackKit` to your `Package.swift`
 
 ```swift  
@@ -18,22 +19,25 @@ let package = Package(
 You can install it with [homebrew](https://brew.sh): `brew install libressl`
 
 For additional details, see the [SKRTMAPI readme](https://github.com/pvzig/SlackKit/tree/master/SKRTMAPI#swift-package-manager).
+</details>
 
-#### Carthage
-
+<details>
+  <summary><strong>Carthage</strong></summary>
 Add `SlackKit` to your `Cartfile`:
 
 ```
 github "pvzig/SlackKit"
 ```
+</details>
 
-#### CocoaPods
+<details>
+  <summary><strong>CocoaPods</strong></summary>
 Add `SlackKit` to your `Podfile`:
 
 ```
 pod 'SlackKit'
 ```
-
+</details>
 ### Usage
 To use the library in your project import it:
 

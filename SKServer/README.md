@@ -2,33 +2,8 @@
 A server-side Swift framework for creating Slack apps.
 
 ## Installation
-
-### CocoaPods
-
-Add SKServer to your pod file:
-
-```
-use_frameworks!
-pod 'SlackKit/SKServer'
-```
-
-### Carthage
-
-Add SlackKit to your Cartfile:
-
-```
-github "pvzig/SlackKit"
-```
-and run
-
-```
-carthage bootstrap
-```
-
-Drag the built `SKServer.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Swifter.framework` into your Xcode project.
-
-### Swift Package Manager
-
+<details>
+  <summary><strong>Swift Package Manager</strong></summary>
 Add SlackKit as a dependency to your `Package.swift` and specify `SKServer` as a target dependency:
 
 ```swift
@@ -52,6 +27,31 @@ let package = Package(
 )
 
 ```
+</details>
+<details>
+  <summary><strong>Carthage</strong></summary>
+Add SlackKit to your `Cartfile`:
+
+```
+github "pvzig/SlackKit"
+```
+and run
+
+```
+carthage bootstrap
+```
+
+Drag the built `SKServer.framework` and it's dependencies `SKCore.framework`, `SKWebAPI.framework`, and `Swifter.framework` into your Xcode project.
+</details>
+<details>
+  <summary><strong>CocoaPods</strong></summary>
+Add SKServer to your `Podfile`:
+
+```
+use_frameworks!
+pod 'SlackKit/SKServer'
+```
+</details>
 
 ## Usage
 To use the library in your project import it:
