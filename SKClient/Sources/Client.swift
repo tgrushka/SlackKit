@@ -115,6 +115,10 @@ open class Client {
             manualPresenceChange(event)
         case .prefChange:
             changePreference(event)
+        case .memberJoinedChannel:
+            memberJoinedChannel(event)
+        case .memberLeftChannel:
+            memberLeftChannel(event)
         case .userChange:
             userChange(event)
         case .teamJoin:
@@ -359,6 +363,30 @@ extension Client {
 
     func channelHistoryChanged(_ event: Event) {
 
+    }
+
+    func memberJoinedChannel(_ event: Event) {
+        guard
+            let channel = event.channel?.id,
+            let member = event.user?.id
+        else {
+            return
+        }
+
+        channels[channel]?.members?.append(member)
+    }
+
+    func memberLeftChannel(_ event: Event) {
+        guard
+            let channel = event.channel?.id,
+            let member = event.user?.id
+        else {
+            return
+        }
+
+        if let index = channels[channel]?.members?.index(of: member) {
+            channels[channel]?.members?.remove(at: index)
+        }
     }
 }
 
