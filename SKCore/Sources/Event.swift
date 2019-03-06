@@ -64,6 +64,8 @@ public enum EventType: String {
     case pinRemoved = "pin_removed"
     case pong = "pong"
     case presenceChange = "presence_change"
+    case memberJoinedChannel = "member_joined_channel"
+    case memberLeftChannel = "member_left_channel"
     case manualPresenceChange = "manual_presence_change"
     case prefChange = "pref_change"
     case userChange = "user_change"
@@ -151,6 +153,7 @@ public class Event {
     public let edited: Edited?
     public let bot: Bot?
     public let channel: Channel?
+    public let channelType: String?
     public let comment: Comment?
     public let user: User?
     public let files: [File]
@@ -158,10 +161,12 @@ public class Event {
     public let nestedMessage: Message?
     public let itemUser: String?
     public let item: Item?
+    public let teamID: String?
     public let dndStatus: DoNotDisturbStatus?
     public let subteam: UserGroup?
     public let subteamID: String?
-    public var profile: CustomProfile?
+    public let profile: CustomProfile?
+    public let inviterID: String?
 
     //swiftlint:disable function_body_length
     public init(_ event: [String: Any]) {
@@ -198,6 +203,9 @@ public class Event {
         nestedMessage = Message(dictionary: event["message"] as? [String: Any])
         profile = CustomProfile(profile: event["profile"] as? [String: Any])
         files = (event["files"] as? [Any])?.compactMap { File(file: $0 as? [String: Any]) } ?? []
+        channelType = event["channel_type"] as? String
+        teamID = event["team"] as? String
+        inviterID = event["inviter"] as? String
 
         // Comment, Channel, and User can come across as Strings or Dictionaries
         if let commentDictionary = event["comment"] as? [String: Any] {

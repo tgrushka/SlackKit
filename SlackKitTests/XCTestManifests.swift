@@ -1,5 +1,12 @@
 import XCTest
 
+extension SKClientTests {
+    static let __allTests = [
+        ("testMemberJoinedChannel", testMemberJoinedChannel),
+        ("testMemberLeftChannel", testMemberLeftChannel),
+    ]
+}
+
 extension SKCoreTests {
     static let __allTests = [
         ("testChannel", testChannel),
@@ -17,6 +24,7 @@ extension SKCoreTests {
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
+        testCase(SKClientTests.__allTests),
         testCase(SKCoreTests.__allTests),
     ]
 }

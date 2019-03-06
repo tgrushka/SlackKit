@@ -46,6 +46,19 @@ final class SKCoreTests: XCTestCase {
         static let events           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/events.json"))
     }
 
+    static var allTests = [
+        ("testChannel", testChannel),
+        ("testConversation", testConversation),
+        ("testFile", testFile),
+        ("testGroup", testGroup),
+        ("testIm", testIm),
+        ("TestMpim", testMpim),
+        ("testUser", testUser),
+        ("testUserGroup", testUserGroup),
+        ("testEvents", testEvents)
+    ]
+  
+  func testEvents() {
     let eventsKeys = [
         // Bot Event
         "bot_added","bot_changed",
@@ -73,22 +86,9 @@ final class SKCoreTests: XCTestCase {
         "user_change", "user_typing"
     ]
 
-    static var allTests = [
-        ("testChannel", testChannel),
-        ("testConversation", testConversation),
-        ("testFile", testFile),
-        ("testGroup", testGroup),
-        ("testIm", testIm),
-        ("TestMpim", testMpim),
-        ("testUser", testUser),
-        ("testUserGroup", testUserGroup),
-        ("testEvents",testEvents)
-    ]
-  
-  func testEvents() {
     let data = JSONData.events
     let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-    _ = self.eventsKeys.map { json[$0] as! [String: Any] }.map { Event($0) }
+    _ = eventsKeys.map { json[$0] as! [String: Any] }.map { Event($0) }
   }
   
   func testChannel() {

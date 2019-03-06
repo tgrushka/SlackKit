@@ -19,6 +19,9 @@
 		2601B6D62223038A00F197AB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6242220731800A67B67 /* user.json */; };
 		2601B6D72223038A00F197AB /* usergroup.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D4E6252220731800A67B67 /* usergroup.json */; };
 		2601B6E2222371A100F197AB /* SKCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4E6362220733F00A67B67 /* SKCoreTests.swift */; };
+		2601B70C222F6CFD00F197AB /* SKClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601B70B222F6CFD00F197AB /* SKClientTests.swift */; };
+		2601B70F222F766D00F197AB /* member_joined_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 2601B70D222F766D00F197AB /* member_joined_channel.json */; };
+		2601B710222F766D00F197AB /* member_left_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 2601B70E222F766D00F197AB /* member_left_channel.json */; };
 		263B102421FE33A000AF9EF9 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100921FE33A000AF9EF9 /* UserGroup.swift */; };
 		263B102521FE33A000AF9EF9 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100A21FE33A000AF9EF9 /* Scope.swift */; };
 		263B102621FE33A000AF9EF9 /* AttachmentField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100B21FE33A000AF9EF9 /* AttachmentField.swift */; };
@@ -191,6 +194,9 @@
 /* Begin PBXFileReference section */
 		2601B6B72220813600F197AB /* SlackKitTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SlackKitTests.xcconfig; sourceTree = "<group>"; };
 		2601B6C1222085AB00F197AB /* SlackKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2601B70B222F6CFD00F197AB /* SKClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKClientTests.swift; sourceTree = "<group>"; };
+		2601B70D222F766D00F197AB /* member_joined_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = member_joined_channel.json; sourceTree = "<group>"; };
+		2601B70E222F766D00F197AB /* member_left_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = member_left_channel.json; sourceTree = "<group>"; };
 		263B0F9B21FE235100AF9EF9 /* SKCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FAA21FE23A000AF9EF9 /* SKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKWebAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,7 +311,6 @@
 		26D4E6292220731800A67B67 /* rtm.connect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rtm.connect.json; sourceTree = "<group>"; };
 		26D4E62A2220731800A67B67 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		26D4E6362220733F00A67B67 /* SKCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCoreTests.swift; sourceTree = "<group>"; };
-		26D4E6372220733F00A67B67 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,7 +802,6 @@
 		26D4E6112220719D00A67B67 /* SlackKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				26D4E6372220733F00A67B67 /* XCTestManifests.swift */,
 				26D4E61A222072BC00A67B67 /* SlackKit */,
 				26D4E61B222072C600A67B67 /* SKClient */,
 				26D4E61C222072D100A67B67 /* SKCore */,
@@ -824,6 +828,8 @@
 				26D4E6202220731700A67B67 /* rtm.start.json */,
 				26D4E6242220731800A67B67 /* user.json */,
 				26D4E6252220731800A67B67 /* usergroup.json */,
+				2601B70D222F766D00F197AB /* member_joined_channel.json */,
+				2601B70E222F766D00F197AB /* member_left_channel.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -847,6 +853,7 @@
 		26D4E61B222072C600A67B67 /* SKClient */ = {
 			isa = PBXGroup;
 			children = (
+				2601B70B222F6CFD00F197AB /* SKClientTests.swift */,
 			);
 			path = SKClient;
 			sourceTree = "<group>";
@@ -1168,7 +1175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2601B6CD2223038A00F197AB /* channel.json in Resources */,
+				2601B710222F766D00F197AB /* member_left_channel.json in Resources */,
 				2601B6CE2223038A00F197AB /* conversation.json in Resources */,
+				2601B70F222F766D00F197AB /* member_joined_channel.json in Resources */,
 				2601B6CF2223038A00F197AB /* events.json in Resources */,
 				2601B6D02223038A00F197AB /* file.json in Resources */,
 				2601B6D12223038A00F197AB /* group.json in Resources */,
@@ -1230,6 +1239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2601B70C222F6CFD00F197AB /* SKClientTests.swift in Sources */,
 				2601B6E2222371A100F197AB /* SKCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
