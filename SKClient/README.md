@@ -5,7 +5,7 @@ Create a custom SlackKit client.
 
 <details>
   <summary><strong>Swift Package Manager</strong></summary>
-Add SlackKit as a dependency to your `Package.swift` and specify `SKClient` as a target dependency:
+Add SlackKit as a dependency to your <code>Package.swift</code> and specify SKClient as a target dependency:
 
 ```swift
 import PackageDescription
@@ -31,22 +31,23 @@ let package = Package(
 </details>
 <details>
   <summary><strong>Carthage</strong></summary>
-Add SlackKit to your `Cartfile`:
+Add SlackKit to your <code>Cartfile</code>:
 
 ```
 github "pvzig/SlackKit"
 ```
+
 and run
 
 ```
 carthage bootstrap
 ```
 
-Drag the built `SKClient.framework` and it's dependency `SKCore.framework` into your Xcode project.
+Drag the built <code>SKClient.framework</code> and it's dependency <code>SKCore.framework</code> into your Xcode project.
 </details>
 <details>
   <summary><strong>CocoaPods</strong></summary>
-Add SKClient to your `Podfile`:
+Add SKClient to your <code>Podfile</code>:
 
 ```
 use_frameworks!

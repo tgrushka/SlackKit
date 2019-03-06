@@ -6,7 +6,7 @@ Make requests to the [Slack Web API](https://api.slack.com/web) in Swift.
 
 <details>
   <summary><strong>Swift Package Manager</strong></summary>
-Add SlackKit as a dependency to your `Package.swift` and specify `SKWebAPI` as a target dependency:
+Add SlackKit as a dependency to your <code>Package.swift</code> and specify SKWebAPI as a target dependency:
 
 ```swift
 import PackageDescription
@@ -32,22 +32,23 @@ let package = Package(
 </details>
 <details>
   <summary><strong>Carthage</strong></summary>
-Add SlackKit to your `Cartfile`:
+Add SlackKit to your <code>Cartfile</code>:
 
 ```
 github "pvzig/SlackKit"
 ```
+
 and run
 
 ```
 carthage bootstrap
 ```
 
-Drag the built `SKWebAPI.framework` and it's dependency `SKCore.framework` into your Xcode project.
+Drag the built <code>SKWebAPI.framework</code> and it's dependency <code>SKCore.framework</code> into your Xcode project.
 </details>
 <details>
   <summary><strong>CocoaPods</strong></summary>
-Add SKWebAPI to your `Podfile`:
+Add SKWebAPI to your <code>Podfile</code>:
 
 ```
 use_frameworks!
