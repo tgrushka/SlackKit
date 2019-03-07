@@ -53,6 +53,7 @@ public final class Message: Equatable {
     public var responseType: MessageResponseType?
     public var replaceOriginal: Bool?
     public var deleteOriginal: Bool?
+    public let edited: Edited?
 
     public init(dictionary: [String: Any]?) {
         subtype = dictionary?["subtype"] as? String
@@ -85,6 +86,7 @@ public final class Message: Equatable {
         responseType = MessageResponseType(rawValue: dictionary?["response_type"] as? String ?? "")
         replaceOriginal = dictionary?["replace_original"] as? Bool
         deleteOriginal = dictionary?["delete_original"] as? Bool
+        edited = Edited(edited:dictionary?["edited"] as? [String: Any])
     }
 
     public init(ts: String?) {
@@ -101,6 +103,7 @@ public final class Message: Equatable {
         upload = nil
         itemType = nil
         comment = nil
+        edited = nil
     }
 
     public static func == (lhs: Message, rhs: Message) -> Bool {
