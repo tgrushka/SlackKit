@@ -29,7 +29,7 @@ import WebSocket
 // Builds with *Swift Package Manager ONLY*
 public class VaporEngineRTM: RTMWebSocket {
 
-    private let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
+    private let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 1)
     // Delegate
     public weak var delegate: RTMDelegate?
     // Websocket
