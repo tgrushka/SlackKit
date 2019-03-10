@@ -314,23 +314,25 @@ extension WebAPI {
             failure?(error)
         }
     }
-    
+
     public func sendEphemeral(
         channel: String,
         text: String,
         user: String,
+        thread: String? = nil,
         asUser: Bool? = nil,
         attachments: [Attachment?]? = nil,
         linkNames: Bool? = nil,
         parse: ParseMode? = nil,
         success: (((ts: String?, channel: String?)) -> Void)?,
         failure: FailureClosure?
-        ) {
+    ) {
         let parameters: [String: Any?] = [
             "token": token,
             "channel": channel,
             "text": text,
             "user": user,
+            "thread_ts": thread,
             "as_user": asUser,
             "attachments": encodeAttachments(attachments),
             "link_names": linkNames,
