@@ -210,6 +210,30 @@ extension WebAPI {
     public func inviteToChannel(_ channel: String, user: String, success: SuccessClosure?, failure: FailureClosure?) {
         invite(.channelsInvite, channel: channel, user: user, success: success, failure: failure)
     }
+    
+    public func channelsJoin(_ name: String, validate: Bool, success: ChannelClosure?, failure: FailureClosure?) {
+        join(.channelsJoin, name: name, validate: validate, success: success, failure: failure)
+    }
+    
+    public func channelsLeave(_ channel: String, success: SuccessClosure?, failure: FailureClosure?) {
+        leave(.channelsLeave, channel: channel, success: success, failure: failure)
+    }
+    
+    public func channelsArchive(_ channel: String, success: SuccessClosure?, failure: FailureClosure?) {
+        archive(.channelsArchive, channel: channel, success: success, failure: failure)
+    }
+    
+    public func channelsUnarchive(_ channel: String, success: SuccessClosure?, failure: FailureClosure?) {
+        unarchive(.channelsUnarchive, channel: channel, success: success, failure: failure)
+    }
+    
+    public func channelsRename(_ channel: String, name: String, validate: Bool, success: ChannelClosure?, failure: FailureClosure?) {
+        rename(.channelsRename, channel: channel, name: name, validate: validate, success: success, failure: failure)
+    }
+    
+    public func channelsKick(_ channel: String, user: String, success: SuccessClosure?, failure: FailureClosure?) {
+        kick(.channelsKick, channel: channel, user: user, success: success, failure: failure)
+    }
 
     public func setChannelPurpose(channel: String, purpose: String, success: SuccessClosure?, failure: FailureClosure?) {
         setInfo(.channelsSetPurpose, type: .purpose, channel: channel, text: purpose, success: {(purposeSet) in
@@ -1346,6 +1370,94 @@ extension WebAPI {
     ) {
         let parameters: [String: Any] = ["token": token, "channel": channel, "user": user]
         networkInterface.request(endpoint, parameters: parameters, successClosure: { _ in
+            success?(true)
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func join(
+        _ endpoint: Endpoint,
+        name: String,
+        validate: Bool,
+        success: ChannelClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "name": name, "validate": validate]
+        networkInterface.request(endpoint, parameters: parameters, successClosure: { response in
+            success?(Channel(channel: response["channel"] as? [String: Any]))
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func leave(
+        _ endpoint: Endpoint,
+        channel: String,
+        success: SuccessClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "channel": channel]
+        networkInterface.request(endpoint, parameters: parameters,successClosure: { _ in
+            success?(true)
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func archive(
+        _ endpoint: Endpoint,
+        channel: String,
+        success: SuccessClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "channel": channel]
+        networkInterface.request(endpoint, parameters: parameters,successClosure: { _ in
+            success?(true)
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func unarchive(
+        _ endpoint: Endpoint,
+        channel: String,
+        success: SuccessClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "channel": channel]
+        networkInterface.request(endpoint, parameters: parameters,successClosure: { _ in
+            success?(true)
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func rename(
+        _ endpoint: Endpoint,
+        channel: String,
+        name: String,
+        validate: Bool,
+        success: ChannelClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "channel": channel, "name": name, "validate": validate ]
+        networkInterface.request(endpoint, parameters: parameters,successClosure: { response in
+            success?(Channel(channel: response["channel"] as? [String: Any]))
+        }) {(error) in
+            failure?(error)
+        }
+    }
+    
+    fileprivate func kick(
+        _ endpoint: Endpoint,
+        channel: String,
+        user: String,
+        success: SuccessClosure?,
+        failure: FailureClosure?
+        ) {
+        let parameters: [String: Any] = ["token": token, "channel": channel, "user": user]
+        networkInterface.request(endpoint, parameters: parameters,successClosure: { _ in
             success?(true)
         }) {(error) in
             failure?(error)
