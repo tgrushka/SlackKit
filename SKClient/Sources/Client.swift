@@ -282,7 +282,7 @@ extension Client {
 
         let timeout = DispatchTime.now() + Double(Int64(5.0 * Double(UInt64.nanosecondsPerSecond))) / Double(UInt64.nanosecondsPerSecond)
         DispatchQueue.main.asyncAfter(deadline: timeout, execute: {
-            if let index = self.channels[channelID]?.usersTyping.index(of: userID) {
+            if let index = self.channels[channelID]?.usersTyping.firstIndex(of: userID) {
                 self.channels[channelID]?.usersTyping.remove(at: index)
             }
         })
@@ -336,7 +336,7 @@ extension Client {
             return
         }
 
-        if let userID = authenticatedUser?.id, let index = channels[id]?.members?.index(of: userID) {
+        if let userID = authenticatedUser?.id, let index = channels[id]?.members?.firstIndex(of: userID) {
             channels[id]?.members?.remove(at: index)
         }
     }
@@ -384,7 +384,7 @@ extension Client {
             return
         }
 
-        if let index = channels[channel]?.members?.index(of: member) {
+        if let index = channels[channel]?.members?.firstIndex(of: member) {
             channels[channel]?.members?.remove(at: index)
         }
     }

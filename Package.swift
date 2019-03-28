@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -69,18 +69,19 @@ let package = Package(
 
 #if os(macOS)
 package.dependencies = [
-    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
-    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.1")),
-    .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.0.6"))
+    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.6")),
+    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.2")),
+    .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.1.0"))
 ]
 #elseif os(Linux)
 package.dependencies = [
-    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
-    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.1"))
+    .package(url: "https://github.com/vapor/websocket", .upToNextMinor(from: "1.1.2"))
+    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.6")),
 ]
 #elseif os(iOS) || os(tvOS)
 package.dependencies = [
-    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.5")),
-    .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.0.6"))
+    .package(url: "https://github.com/daltoniam/Starscream", .upToNextMinor(from: "3.1.0")),
+    .package(url: "https://github.com/httpswift/swifter.git", .upToNextMinor(from: "1.4.6"))
 ]
 #endif
+

@@ -108,10 +108,10 @@
 		269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176121FFDB4C00F1F500 /* Swifter.framework */; };
 		269A18342204055200F1F500 /* Leaderbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18322204055200F1F500 /* Leaderbot.swift */; };
 		269A18352204055200F1F500 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18332204055200F1F500 /* main.swift */; };
-		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26D4E4D92210A33A00A67B67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18362204057900F1F500 /* main.swift */; };
 		26D4E605221211FD00A67B67 /* SlackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E602221211B900A67B67 /* SlackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E6062212120100A67B67 /* SKClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FF221211B900A67B67 /* SKClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1113,30 +1113,36 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Peter Zignego";
 				TargetAttributes = {
 					2601B6C0222085AB00F197AB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0F9A21FE235100AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0FA921FE23A000AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0FB621FE23B000AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0FC321FE23C200AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0FD021FE23CD00AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					263B0FDD21FE23DB00AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					263B0FE921FE247300AF9EF9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1436,7 +1442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "x86_64 i386";
@@ -1464,7 +1470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "x86_64 i386";
@@ -1531,6 +1537,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1589,6 +1596,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1618,7 +1626,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1648,7 +1656,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1679,7 +1687,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1710,7 +1718,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1741,7 +1749,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1772,7 +1780,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1804,7 +1812,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1836,7 +1844,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1868,7 +1876,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1899,7 +1907,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos macosx";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1931,7 +1939,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1963,7 +1971,7 @@
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
