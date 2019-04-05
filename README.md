@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/pzignego/SlackKit/_apis/build/status/pvzig.SlackKit?branchName=master)](https://dev.azure.com/pzignego/SlackKit/_build/latest?definitionId=2&branchName=master)
 
-![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift Version](https://img.shields.io/badge/Swift-5-orange.svg)
 ![Plaforms](https://img.shields.io/badge/Platforms-macOS,_iOS,_tvOS,_Linux-lightgrey.svg)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
@@ -25,7 +25,7 @@ Add `SlackKit` to your `Package.swift`
 ```swift  
 let package = Package(
 	dependencies: [
-		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0"))
+		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.3.0"))
 	]
 )
 ```
