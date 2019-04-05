@@ -15,7 +15,7 @@ import Foundation
 //   limitations under the License.
 public extension RequestType {
 
-    public var formURLEncodedBody: [(name: String, value: String)] {
+    var formURLEncodedBody: [(name: String, value: String)] {
         guard let bodyString: String = self.body else {
             return []
         }
@@ -23,7 +23,7 @@ public extension RequestType {
         return parse(body: bodyString)
     }
 
-    public var postParams: [String: String] {
+    var postParams: [String: String] {
         var ret = [String: String]()
         guard let bodyString: String = self.body else {
             return ret

@@ -106,7 +106,7 @@ extension String {
 
     /// Return `Self` without the query string.
     func prefixUpToQuery() -> String {
-        return self.index(of: "?")
+        return self.firstIndex(of: "?")
             .map { self.prefix(upTo: $0) }
             .map(String.init) ?? self
     }
