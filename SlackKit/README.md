@@ -8,7 +8,7 @@ Add SlackKit to your <code>Package.swift</code>
 ```swift  
 let package = Package(
 	dependencies: [
-		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.2.0"))
+		.package(url: "https://github.com/pvzig/SlackKit.git", .upToNextMinor(from: "4.3.0"))
 	]
 )
 ```
