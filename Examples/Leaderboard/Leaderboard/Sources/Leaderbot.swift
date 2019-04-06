@@ -1,7 +1,7 @@
 //
 // Leaderboard.swift
 //
-// Copyright © 2017 Peter Zignego. All rights reserved.
+// Copyright © 2019 Peter Zignego. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -100,7 +100,7 @@ class Leaderbot {
         let thingRegex = try? NSRegularExpression(pattern: expression, options: [])
         let things = thingRegex?.matches(in: text, options: [], range: NSMakeRange(0, text.utf16.count)) ?? []
         for match in things {
-            let value = text.substring(with: text.range(from: match.range(at: 1))!)
+            let value = String(text[text.range(from: match.range(at: 1))!])
             if leaderboards[teamID]?.scores[value] == nil { leaderboards[teamID]?.scores[value] = 0 }
             switch trigger {
             case .plusPlus:

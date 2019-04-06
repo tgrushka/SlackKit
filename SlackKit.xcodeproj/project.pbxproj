@@ -22,6 +22,9 @@
 		2601B70C222F6CFD00F197AB /* SKClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601B70B222F6CFD00F197AB /* SKClientTests.swift */; };
 		2601B70F222F766D00F197AB /* member_joined_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 2601B70D222F766D00F197AB /* member_joined_channel.json */; };
 		2601B710222F766D00F197AB /* member_left_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 2601B70E222F766D00F197AB /* member_left_channel.json */; };
+		262F50412259145700A74EB1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F503F2259145700A74EB1 /* main.swift */; };
+		262F50422259145700A74EB1 /* Leaderbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F50402259145700A74EB1 /* Leaderbot.swift */; };
+		262F505B22591A6F00A74EB1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F505A22591A6F00A74EB1 /* main.swift */; };
 		263B102421FE33A000AF9EF9 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100921FE33A000AF9EF9 /* UserGroup.swift */; };
 		263B102521FE33A000AF9EF9 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100A21FE33A000AF9EF9 /* Scope.swift */; };
 		263B102621FE33A000AF9EF9 /* AttachmentField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B100B21FE33A000AF9EF9 /* AttachmentField.swift */; };
@@ -106,13 +109,10 @@
 		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
 		269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176021FFDB4C00F1F500 /* Starscream.framework */; };
 		269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176121FFDB4C00F1F500 /* Swifter.framework */; };
-		269A18342204055200F1F500 /* Leaderbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18322204055200F1F500 /* Leaderbot.swift */; };
-		269A18352204055200F1F500 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18332204055200F1F500 /* main.swift */; };
 		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26D4E4D42210A31F00A67B67 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		26D4E4D92210A33A00A67B67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A18362204057900F1F500 /* main.swift */; };
 		26D4E605221211FD00A67B67 /* SlackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E602221211B900A67B67 /* SlackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E6062212120100A67B67 /* SKClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FF221211B900A67B67 /* SKClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E6072212120500A67B67 /* SKCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E603221211B900A67B67 /* SKCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -197,6 +197,9 @@
 		2601B70B222F6CFD00F197AB /* SKClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKClientTests.swift; sourceTree = "<group>"; };
 		2601B70D222F766D00F197AB /* member_joined_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = member_joined_channel.json; sourceTree = "<group>"; };
 		2601B70E222F766D00F197AB /* member_left_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = member_left_channel.json; sourceTree = "<group>"; };
+		262F503F2259145700A74EB1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		262F50402259145700A74EB1 /* Leaderbot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderbot.swift; sourceTree = "<group>"; };
+		262F505A22591A6F00A74EB1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = "Examples/Robot Or Not Bot/Robot Or Not Bot/Sources/main.swift"; sourceTree = SOURCE_ROOT; };
 		263B0F9B21FE235100AF9EF9 /* SKCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FAA21FE23A000AF9EF9 /* SKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKWebAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,9 +290,6 @@
 		269A176121FFDB4C00F1F500 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Swifter.framework; sourceTree = "<group>"; };
 		269A177021FFE40700F1F500 /* SKRTMAPI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKRTMAPI.xcconfig; sourceTree = "<group>"; };
 		269A177121FFE4E200F1F500 /* SKServer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SKServer.xcconfig; sourceTree = "<group>"; };
-		269A18322204055200F1F500 /* Leaderbot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderbot.swift; sourceTree = "<group>"; };
-		269A18332204055200F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		269A18362204057900F1F500 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26D4E4D82210A31F00A67B67 /* Robot or Not Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot or Not Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D4E5FE221211B900A67B67 /* SKRTMAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRTMAPI.h; sourceTree = "<group>"; };
 		26D4E5FF221211B900A67B67 /* SKClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKClient.h; sourceTree = "<group>"; };
@@ -393,6 +393,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262F503E2259145700A74EB1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				262F503F2259145700A74EB1 /* main.swift */,
+				262F50402259145700A74EB1 /* Leaderbot.swift */,
+			);
+			name = Sources;
+			path = Leaderboard/Sources;
+			sourceTree = "<group>";
+		};
 		263B0F8121FE1B2300AF9EF9 = {
 			isa = PBXGroup;
 			children = (
@@ -755,18 +765,9 @@
 		269A18282204048300F1F500 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				269A182A2204048300F1F500 /* Sources */,
+				262F503E2259145700A74EB1 /* Sources */,
 			);
 			path = Leaderboard;
-			sourceTree = "<group>";
-		};
-		269A182A2204048300F1F500 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				269A18322204055200F1F500 /* Leaderbot.swift */,
-				269A18332204055200F1F500 /* main.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		269A182C2204048300F1F500 /* Robot or Not Bot */ = {
@@ -780,7 +781,7 @@
 		269A182D2204048300F1F500 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				269A18362204057900F1F500 /* main.swift */,
+				262F505A22591A6F00A74EB1 /* main.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1148,6 +1149,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
+					26D4E4CB2210A31F00A67B67 = {
+						LastSwiftMigration = 1020;
+					};
 				};
 			};
 			buildConfigurationList = 263B0F8521FE1B2300AF9EF9 /* Build configuration list for PBXProject "SlackKit" */;
@@ -1367,8 +1371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269A18352204055200F1F500 /* main.swift in Sources */,
-				269A18342204055200F1F500 /* Leaderbot.swift in Sources */,
+				262F50422259145700A74EB1 /* Leaderbot.swift in Sources */,
+				262F50412259145700A74EB1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1376,7 +1380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D4E4D92210A33A00A67B67 /* main.swift in Sources */,
+				262F505B22591A6F00A74EB1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2000,7 +2004,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -2024,7 +2028,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2050,7 +2054,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -2074,7 +2078,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

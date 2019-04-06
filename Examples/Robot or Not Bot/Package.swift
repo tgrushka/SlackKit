@@ -8,11 +8,11 @@ let package = Package(
         .executable(name: "Robot or Not Bot", targets: ["Robot or Not Bot"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SlackKit/SlackKit", .upToNextMajor(from: "4.0.0"))
+        .package(url: "https://github.com/pvzig/SlackKit", .upToNextMinor(from: "4.3.0"))
     ],
     targets: [
         .target(name: "Robot or Not Bot",
         dependencies: ["SlackKit"],
-                path: "Sources")
+                path: "Robot or Not Bot/Sources")
     ]
 )
