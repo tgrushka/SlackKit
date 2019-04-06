@@ -8,11 +8,11 @@ let package = Package(
         .executable(name: "Leaderboard", targets: ["Leaderboard"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SlackKit/SlackKit", .upToNextMajor(from: "4.0.0"))
+        .package(url: "https://github.com/pvzig/SlackKit", .upToNextMinor(from: "4.3.0"))
     ],
     targets: [
         .target(name: "Leaderboard",
-                dependencies: ["SlackKit"],
-                path: "Sources")
+        dependencies: ["SlackKit"],
+                path: "Leaderboard/Sources")
     ]
 )
