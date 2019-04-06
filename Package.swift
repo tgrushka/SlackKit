@@ -58,7 +58,7 @@ let package = Package(
         .library(name: "SlackKit", targets: ["SlackKit"]),
         .library(name: "SKClient", targets: ["SKClient"]),
         .library(name: "SKCore", targets: ["SKCore"]),
-        .library(name: "SKRMTAPI", targets: ["SKRTMAPI"]),
+        .library(name: "SKRTMAPI", targets: ["SKRTMAPI"]),
         .library(name: "SKServer", targets: ["SKServer"]),
         .library(name: "SKWebAPI", targets: ["SKWebAPI"])
     ],
