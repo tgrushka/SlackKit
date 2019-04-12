@@ -10,7 +10,7 @@ jobs:
 # Builds
 - job: macOS
   pool:
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-10.14'
   steps:
   - task: Xcode@5
     inputs:
@@ -18,19 +18,19 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'macosx'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
       actions: 'test'
       scheme: 'SlackKitTests'
       sdk: 'macosx'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
 - job: iOS
   pool:
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-10.14'
   steps:
   - task: Xcode@5
     inputs:
@@ -38,19 +38,19 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'iphoneos'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
       actions: 'test'
       scheme: 'SlackKitTests'
       sdk: 'iphonesimulator'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
 - job: tvOS
   pool:
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-10.14'
   steps:
   - task: Xcode@5
     inputs:
@@ -58,16 +58,16 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'appletvos'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
       actions: 'test'
       scheme: 'SlackKitTests'
       sdk: 'appletvsimulator'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-      xcodeVersion: '10'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
+      xcodeVersion: 'default'
 - job: Linux
   pool:
     vmImage: 'ubuntu-16.04'
