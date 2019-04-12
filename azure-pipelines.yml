@@ -18,7 +18,7 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'macosx'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
@@ -26,7 +26,7 @@ jobs:
       scheme: 'SlackKitTests'
       sdk: 'macosx'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
 - job: iOS
   pool:
@@ -38,7 +38,7 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'iphoneos'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
@@ -46,7 +46,7 @@ jobs:
       scheme: 'SlackKitTests'
       sdk: 'iphonesimulator'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
 - job: tvOS
   pool:
@@ -58,7 +58,7 @@ jobs:
       scheme: 'SlackKit'
       sdk: 'appletvos'
       configuration: 'Release'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
   - task: Xcode@5
     inputs:
@@ -66,7 +66,7 @@ jobs:
       scheme: 'SlackKitTests'
       sdk: 'appletvsimulator'
       configuration: 'Debug'
-      xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+      xcWorkspacePath: 'SlackKit.xcodeproj/project.xcworkspace'
       xcodeVersion: 'default'
 - job: Linux
   pool:
