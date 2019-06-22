@@ -44,6 +44,7 @@ final class SKCoreTests: XCTestCase {
         static let user             = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/user.json"))
         static let usergroup        = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/usergroup.json"))
         static let events           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/events.json"))
+        static let reply            = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/reply.json"))
     }
 
     static var allTests = [
@@ -145,5 +146,18 @@ final class SKCoreTests: XCTestCase {
     let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
     let userGroup = UserGroup(userGroup: json)
     XCTAssertNotNil(userGroup)
+  }
+    
+  func testReplyCodable() {
+    let data = JSONData.reply
+    let decoder = JSONDecoder()
+    let reply = try? decoder.decode(Reply.self, from: data)
+    XCTAssertNotNil(reply)
+    XCTAssertNotNil(reply!.user)
+    XCTAssertNotNil(reply!.ts)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(reply!)
+    XCTAssertNotNil(jsonData)
+    XCTAssertEqual(data, jsonData!)
   }
 }
