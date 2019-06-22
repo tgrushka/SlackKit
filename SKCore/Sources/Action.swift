@@ -21,7 +21,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-public struct Action {
+public struct Action: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case text
+        case type
+        case value
+        case url
+        case style
+        case confirm
+        case options
+        case dataSource = "data_source"
+    }
+    
     public let name: String?
     public let text: String?
     public let type: String?
@@ -32,16 +44,42 @@ public struct Action {
     public let options: [Option]?
     public let dataSource: DataSource?
 
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        text = try values.decodeIfPresent(String.self, forKey: .text)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+        url = try values.decodeIfPresent(String.self, forKey: .url)
+        style = try values.decodeIfPresent(ActionStyle.self, forKey: .style)
+        confirm = try values.decodeIfPresent(Confirm.self, forKey: .confirm)
+        options = try values.decodeIfPresent([Option].self, forKey: .options)
+        dataSource = try values.decodeIfPresent(DataSource.self, forKey: .dataSource)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(text, forKey: .text)
+        try container.encode(type, forKey: .type)
+        try container.encode(value, forKey: .value)
+        try container.encode(url, forKey: .url)
+        try container.encode(style, forKey: .style)
+        try container.encode(confirm, forKey: .confirm)
+        try container.encode(options, forKey: .options)
+        try container.encode(dataSource, forKey: .dataSource)
+    }
+    
     public init(action: [String: Any]?) {
-        name = action?["name"] as? String
-        text = action?["text"] as? String
-        type = action?["type"] as? String
-        value = action?["value"] as? String
-        url = action?["url"] as? String
-        style = ActionStyle(rawValue: action?["style"] as? String ?? "")
-        confirm = Confirm(confirm:action?["confirm"] as? [String: Any])
-        options = (action?["options"] as? [[String: Any]])?.map { Option(option: $0) }
-        dataSource = DataSource(rawValue: action?["data_source"] as? String ?? "")
+        name = action?[CodingKeys.name.rawValue] as? String
+        text = action?[CodingKeys.text.rawValue] as? String
+        type = action?[CodingKeys.type.rawValue] as? String
+        value = action?[CodingKeys.value.rawValue] as? String
+        url = action?[CodingKeys.url.rawValue] as? String
+        style = ActionStyle(rawValue: action?[CodingKeys.style.rawValue] as? String ?? "")
+        confirm = Confirm(confirm:action?[CodingKeys.confirm.rawValue] as? [String: Any])
+        options = (action?[CodingKeys.options.rawValue] as? [[String: Any]])?.map { Option(option: $0) }
+        dataSource = DataSource(rawValue: action?[CodingKeys.dataSource.rawValue] as? String ?? "")
     }
 
     public init(name: String, text: String, type: String = "button", style: ActionStyle = .defaultStyle, value: String? = nil,
@@ -59,29 +97,52 @@ public struct Action {
 
     public var dictionary: [String: Any] {
         var dict = [String: Any]()
-        dict["name"] = name
-        dict["text"] = text
-        dict["type"] = type
-        dict["value"] = value
-        dict["url"] = url
-        dict["style"] = style?.rawValue
-        dict["confirm"] = confirm?.dictionary
-        dict["options"] = options?.map { $0.dictionary }
-        dict["data_source"] = dataSource?.rawValue
+        dict[CodingKeys.name.rawValue] = name
+        dict[CodingKeys.text.rawValue] = text
+        dict[CodingKeys.type.rawValue] = type
+        dict[CodingKeys.value.rawValue] = value
+        dict[CodingKeys.url.rawValue] = url
+        dict[CodingKeys.style.rawValue] = style?.rawValue
+        dict[CodingKeys.confirm.rawValue] = confirm?.dictionary
+        dict[CodingKeys.options.rawValue] = options?.map { $0.dictionary }
+        dict[CodingKeys.dataSource.rawValue] = dataSource?.rawValue
         return dict
     }
 
-    public struct Confirm {
+    public struct Confirm: Codable {
+        private enum CodingKeys: String, CodingKey {
+            case title
+            case text
+            case okText = "ok_text"
+            case dismissText = "dismiss_text"
+        }
+        
         public let title: String?
         public let text: String?
         public let okText: String?
         public let dismissText: String?
 
+        public init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            title = try values.decodeIfPresent(String.self, forKey: .title)
+            text = try values.decodeIfPresent(String.self, forKey: .text)
+            okText = try values.decodeIfPresent(String.self, forKey: .okText)
+            dismissText = try values.decodeIfPresent(String.self, forKey: .dismissText)
+        }
+        
+        public func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(title, forKey: .title)
+            try container.encode(text, forKey: .text)
+            try container.encode(okText, forKey: .okText)
+            try container.encode(dismissText, forKey: .dismissText)
+        }
+        
         public init(confirm: [String: Any]?) {
-            title = confirm?["title"] as? String
-            text = confirm?["text"] as? String
-            okText = confirm?["ok_text"] as? String
-            dismissText = confirm?["dismiss_text"] as? String
+            title = confirm?[CodingKeys.title.rawValue] as? String
+            text = confirm?[CodingKeys.text.rawValue] as? String
+            okText = confirm?[CodingKeys.okText.rawValue] as? String
+            dismissText = confirm?[CodingKeys.dismissText.rawValue] as? String
         }
 
         public init(text: String, title: String? = nil, okText: String? = nil, dismissText: String? = nil) {
@@ -93,21 +154,38 @@ public struct Action {
 
         public var dictionary: [String: Any] {
             var dict = [String: Any]()
-            dict["title"] = title
-            dict["text"] = text
-            dict["ok_text"] = okText
-            dict["dismiss_text"] = dismissText
+            dict[CodingKeys.title.rawValue] = title
+            dict[CodingKeys.text.rawValue] = text
+            dict[CodingKeys.okText.rawValue] = okText
+            dict[CodingKeys.dismissText.rawValue] = dismissText
             return dict
         }
     }
 
-    public struct Option {
+    public struct Option: Codable {
+        private enum CodingKeys: String, CodingKey {
+            case text
+            case value
+        }
+        
         public let text: String?
         public let value: String?
 
+        public init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            text = try values.decodeIfPresent(String.self, forKey: .text)
+            value = try values.decodeIfPresent(String.self, forKey: .value)
+        }
+        
+        public func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(text, forKey: .text)
+            try container.encode(value, forKey: .value)
+        }
+        
         public init(option: [String: Any]?) {
-            text = option?["text"] as? String
-            value = option?["value"] as? String
+            text = option?[CodingKeys.text.rawValue] as? String
+            value = option?[CodingKeys.value.rawValue] as? String
         }
 
         public init(text: String, value: String) {
@@ -117,26 +195,26 @@ public struct Action {
 
         public var dictionary: [String: Any] {
             var dict = [String: Any]()
-            dict["text"] = text
-            dict["value"] = value
+            dict[CodingKeys.text.rawValue] = text
+            dict[CodingKeys.value.rawValue] = value
             return dict
         }
     }
 
-    public enum DataSource: String {
+    public enum DataSource: String, Codable {
         case users
         case channels
         case conversations
     }
 }
 
-public enum ActionStyle: String {
+public enum ActionStyle: String, Codable {
     case defaultStyle = "default"
     case primary = "primary"
     case danger = "danger"
 }
 
-public enum MessageResponseType: String {
+public enum MessageResponseType: String, Codable {
     case inChannel = "in_channel"
     case ephemeral = "ephemeral"
 }
