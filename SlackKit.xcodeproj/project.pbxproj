@@ -119,6 +119,7 @@
 		26D4E6082212120900A67B67 /* SKRTMAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FE221211B900A67B67 /* SKRTMAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E6092212120F00A67B67 /* SKServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E600221211B900A67B67 /* SKServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E60A2212121400A67B67 /* SKWebAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E601221211B900A67B67 /* SKWebAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EA45FB922C01290006A6D36 /* action.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EA45FB822C01290006A6D36 /* action.json */; };
 		9EEC459622BE63F800206AC3 /* reply.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEC459522BE63F800206AC3 /* reply.json */; };
 		9EEC459822BE789600206AC3 /* attachmentfield.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEC459722BE789600206AC3 /* attachmentfield.json */; };
 /* End PBXBuildFile section */
@@ -313,6 +314,7 @@
 		26D4E6292220731800A67B67 /* rtm.connect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rtm.connect.json; sourceTree = "<group>"; };
 		26D4E62A2220731800A67B67 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		26D4E6362220733F00A67B67 /* SKCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCoreTests.swift; sourceTree = "<group>"; };
+		9EA45FB822C01290006A6D36 /* action.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = action.json; sourceTree = "<group>"; };
 		9EEC459522BE63F800206AC3 /* reply.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reply.json; sourceTree = "<group>"; };
 		9EEC459722BE789600206AC3 /* attachmentfield.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attachmentfield.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -822,6 +824,7 @@
 		26D4E618222072A700A67B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9EA45FB822C01290006A6D36 /* action.json */,
 				9EEC459722BE789600206AC3 /* attachmentfield.json */,
 				26D4E6282220731800A67B67 /* channel.json */,
 				26D4E6222220731700A67B67 /* conversation.json */,
@@ -1191,6 +1194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2601B6CD2223038A00F197AB /* channel.json in Resources */,
+				9EA45FB922C01290006A6D36 /* action.json in Resources */,
 				2601B710222F766D00F197AB /* member_left_channel.json in Resources */,
 				2601B6CE2223038A00F197AB /* conversation.json in Resources */,
 				2601B70F222F766D00F197AB /* member_joined_channel.json in Resources */,
