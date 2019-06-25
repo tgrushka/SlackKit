@@ -1,1 +1,27 @@
-{"name":"any name","text":"any text","type":"any type","value":"any value","url":"any url","style":"primary","confirm":{"title":"any title","text":"any text","ok_text":"any ok text","dismiss_text":"any dismiss text"},"options":[{"text":"any text 1","value":"any value 1"},{"text":"any text 2","value":"any value 2"}],"data_source":"channels"}
+{
+    "name": "any name",
+    "text": "any text",
+    "type": "any type",
+    "value": "any value",
+    "url": "any url",
+    "style": "primary",
+    "confirm":
+    {
+        "title": "any title",
+        "text": "any text",
+        "ok_text": "any ok text",
+        "dismiss_text": "any dismiss text"
+    },
+    "options":
+    [
+        {
+            "text": "any text 1",
+            "value": "any value 1"
+        },
+        {
+            "text": "any text 2",
+            "value": "any value 2"
+        }
+    ],
+    "data_source": "channels"
+}

@@ -21,8 +21,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-public struct Action: Codable {
-    private enum CodingKeys: String, CodingKey {
+public struct Action {
+    fileprivate enum CodingKeys: String {
         case name
         case text
         case type
@@ -43,32 +43,6 @@ public struct Action: Codable {
     public let confirm: Confirm?
     public let options: [Option]?
     public let dataSource: DataSource?
-
-    public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
-        text = try values.decodeIfPresent(String.self, forKey: .text)
-        type = try values.decodeIfPresent(String.self, forKey: .type)
-        value = try values.decodeIfPresent(String.self, forKey: .value)
-        url = try values.decodeIfPresent(String.self, forKey: .url)
-        style = try values.decodeIfPresent(ActionStyle.self, forKey: .style)
-        confirm = try values.decodeIfPresent(Confirm.self, forKey: .confirm)
-        options = try values.decodeIfPresent([Option].self, forKey: .options)
-        dataSource = try values.decodeIfPresent(DataSource.self, forKey: .dataSource)
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-        try container.encode(text, forKey: .text)
-        try container.encode(type, forKey: .type)
-        try container.encode(value, forKey: .value)
-        try container.encode(url, forKey: .url)
-        try container.encode(style, forKey: .style)
-        try container.encode(confirm, forKey: .confirm)
-        try container.encode(options, forKey: .options)
-        try container.encode(dataSource, forKey: .dataSource)
-    }
     
     public init(action: [String: Any]?) {
         name = action?[CodingKeys.name.rawValue] as? String
@@ -109,8 +83,8 @@ public struct Action: Codable {
         return dict
     }
 
-    public struct Confirm: Codable {
-        private enum CodingKeys: String, CodingKey {
+    public struct Confirm {
+        fileprivate enum CodingKeys: String {
             case title
             case text
             case okText = "ok_text"
@@ -121,22 +95,6 @@ public struct Action: Codable {
         public let text: String?
         public let okText: String?
         public let dismissText: String?
-
-        public init(from decoder: Decoder) throws {
-            let values = try decoder.container(keyedBy: CodingKeys.self)
-            title = try values.decodeIfPresent(String.self, forKey: .title)
-            text = try values.decodeIfPresent(String.self, forKey: .text)
-            okText = try values.decodeIfPresent(String.self, forKey: .okText)
-            dismissText = try values.decodeIfPresent(String.self, forKey: .dismissText)
-        }
-        
-        public func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            try container.encode(title, forKey: .title)
-            try container.encode(text, forKey: .text)
-            try container.encode(okText, forKey: .okText)
-            try container.encode(dismissText, forKey: .dismissText)
-        }
         
         public init(confirm: [String: Any]?) {
             title = confirm?[CodingKeys.title.rawValue] as? String
@@ -162,26 +120,14 @@ public struct Action: Codable {
         }
     }
 
-    public struct Option: Codable {
-        private enum CodingKeys: String, CodingKey {
+    public struct Option {
+        fileprivate enum CodingKeys: String {
             case text
             case value
         }
         
         public let text: String?
         public let value: String?
-
-        public init(from decoder: Decoder) throws {
-            let values = try decoder.container(keyedBy: CodingKeys.self)
-            text = try values.decodeIfPresent(String.self, forKey: .text)
-            value = try values.decodeIfPresent(String.self, forKey: .value)
-        }
-        
-        public func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            try container.encode(text, forKey: .text)
-            try container.encode(value, forKey: .value)
-        }
         
         public init(option: [String: Any]?) {
             text = option?[CodingKeys.text.rawValue] as? String
@@ -207,6 +153,72 @@ public struct Action: Codable {
         case conversations
     }
 }
+
+extension Action: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        text = try values.decodeIfPresent(String.self, forKey: .text)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+        url = try values.decodeIfPresent(String.self, forKey: .url)
+        style = try values.decodeIfPresent(ActionStyle.self, forKey: .style)
+        confirm = try values.decodeIfPresent(Confirm.self, forKey: .confirm)
+        options = try values.decodeIfPresent([Option].self, forKey: .options)
+        dataSource = try values.decodeIfPresent(DataSource.self, forKey: .dataSource)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(text, forKey: .text)
+        try container.encode(type, forKey: .type)
+        try container.encode(value, forKey: .value)
+        try container.encode(url, forKey: .url)
+        try container.encode(style, forKey: .style)
+        try container.encode(confirm, forKey: .confirm)
+        try container.encode(options, forKey: .options)
+        try container.encode(dataSource, forKey: .dataSource)
+    }
+}
+
+extension Action.CodingKeys: CodingKey { }
+
+extension Action.Confirm: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
+        text = try values.decodeIfPresent(String.self, forKey: .text)
+        okText = try values.decodeIfPresent(String.self, forKey: .okText)
+        dismissText = try values.decodeIfPresent(String.self, forKey: .dismissText)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(text, forKey: .text)
+        try container.encode(okText, forKey: .okText)
+        try container.encode(dismissText, forKey: .dismissText)
+    }
+}
+
+extension Action.Confirm.CodingKeys: CodingKey { }
+
+extension Action.Option: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        text = try values.decodeIfPresent(String.self, forKey: .text)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(text, forKey: .text)
+        try container.encode(value, forKey: .value)
+    }
+}
+
+extension Action.Option.CodingKeys: CodingKey { }
 
 public enum ActionStyle: String, Codable {
     case defaultStyle = "default"

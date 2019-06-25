@@ -1,1 +1,5 @@
-{"title":"any title","value":"any value","short":false}
+{
+    "title": "any title",
+    "value": "any value",
+    "short": false
+}

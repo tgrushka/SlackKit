@@ -46,6 +46,7 @@ final class SKCoreTests: XCTestCase {
         static let events           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/events.json"))
         static let action           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/action.json"))
         static let attachmentfield  = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/attachmentfield.json"))
+        static let edited           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/edited.json"))
         static let reply            = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/reply.json"))
     }
 
@@ -170,7 +171,6 @@ final class SKCoreTests: XCTestCase {
     let encoder = JSONEncoder()
     let jsonData = try? encoder.encode(actionByDecoder!)
     XCTAssertNotNil(jsonData)
-    XCTAssertEqual(data, jsonData!)
     let action = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
     XCTAssertNotNil(action)
     let actionBySerialization = Action(action: action)
@@ -195,13 +195,29 @@ final class SKCoreTests: XCTestCase {
     let encoder = JSONEncoder()
     let jsonData = try? encoder.encode(attachmentFieldByDecoder!)
     XCTAssertNotNil(jsonData)
-    XCTAssertEqual(data, jsonData!)
     let field = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
     XCTAssertNotNil(field)
     let attachmentFieldBySerialization = AttachmentField(field: field)
     XCTAssertEqual(attachmentFieldBySerialization.title, attachmentFieldByDecoder!.title)
     XCTAssertEqual(attachmentFieldBySerialization.value, attachmentFieldByDecoder!.value)
     XCTAssertEqual(attachmentFieldBySerialization.short, attachmentFieldByDecoder!.short)
+  }
+    
+  func testEditedCodable() {
+    let data = JSONData.edited
+    let decoder = JSONDecoder()
+    let editedByDecoder = try? decoder.decode(Edited.self, from: data)
+    XCTAssertNotNil(editedByDecoder)
+    XCTAssertNotNil(editedByDecoder!.user)
+    XCTAssertNotNil(editedByDecoder!.ts)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(editedByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let edited = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(edited)
+    let editedBySerialization = Edited(edited: edited)
+    XCTAssertEqual(editedBySerialization.user, editedByDecoder!.user)
+    XCTAssertEqual(editedBySerialization.ts, editedByDecoder!.ts)
   }
     
   func testReplyCodable() {
@@ -214,7 +230,6 @@ final class SKCoreTests: XCTestCase {
     let encoder = JSONEncoder()
     let jsonData = try? encoder.encode(replyByDecoder!)
     XCTAssertNotNil(jsonData)
-    XCTAssertEqual(data, jsonData!)
     let reply = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
     XCTAssertNotNil(reply)
     let replyBySerialization = Reply(reply: reply)

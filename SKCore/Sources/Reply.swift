@@ -21,15 +21,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-public struct Reply: Codable {
-    private enum CodingKeys: String, CodingKey {
+public struct Reply {
+    fileprivate enum CodingKeys: String {
         case user
         case ts
     }
     
     public let user: String?
     public let ts: String?
+    
+    public init(reply: [String: Any]?) {
+        user = reply?[CodingKeys.user.rawValue] as? String
+        ts = reply?[CodingKeys.ts.rawValue] as? String
+    }
+}
 
+extension Reply: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         user = try values.decodeIfPresent(String.self, forKey: .user)
@@ -41,9 +48,6 @@ public struct Reply: Codable {
         try container.encode(user, forKey: .user)
         try container.encode(ts, forKey: .ts)
     }
-    
-    public init(reply: [String: Any]?) {
-        user = reply?[CodingKeys.user.rawValue] as? String
-        ts = reply?[CodingKeys.ts.rawValue] as? String
-    }
 }
+
+extension Reply.CodingKeys: CodingKey { }
