@@ -119,6 +119,9 @@
 		26D4E6082212120900A67B67 /* SKRTMAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E5FE221211B900A67B67 /* SKRTMAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E6092212120F00A67B67 /* SKServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E600221211B900A67B67 /* SKServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D4E60A2212121400A67B67 /* SKWebAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D4E601221211B900A67B67 /* SKWebAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A20D15EA22DE158000044CFC /* BlockComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E722DE158000044CFC /* BlockComposition.swift */; };
+		A20D15EB22DE158000044CFC /* BlockElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E822DE158000044CFC /* BlockElement.swift */; };
+		A20D15EC22DE158000044CFC /* BlockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E922DE158000044CFC /* BlockLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +314,9 @@
 		26D4E6292220731800A67B67 /* rtm.connect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rtm.connect.json; sourceTree = "<group>"; };
 		26D4E62A2220731800A67B67 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		26D4E6362220733F00A67B67 /* SKCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCoreTests.swift; sourceTree = "<group>"; };
+		A20D15E722DE158000044CFC /* BlockComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockComposition.swift; sourceTree = "<group>"; };
+		A20D15E822DE158000044CFC /* BlockElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockElement.swift; sourceTree = "<group>"; };
+		A20D15E922DE158000044CFC /* BlockLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +500,9 @@
 				263B102221FE33A000AF9EF9 /* Action.swift */,
 				263B100C21FE33A000AF9EF9 /* Attachment.swift */,
 				263B100B21FE33A000AF9EF9 /* AttachmentField.swift */,
+				A20D15E722DE158000044CFC /* BlockComposition.swift */,
+				A20D15E822DE158000044CFC /* BlockElement.swift */,
+				A20D15E922DE158000044CFC /* BlockLayout.swift */,
 				263B101B21FE33A000AF9EF9 /* Bot.swift */,
 				263B101521FE33A000AF9EF9 /* Channel.swift */,
 				263B101021FE33A000AF9EF9 /* Comment.swift */,
@@ -1262,6 +1271,8 @@
 				263B103D21FE33A000AF9EF9 /* Action.swift in Sources */,
 				263B102D21FE33A000AF9EF9 /* Item.swift in Sources */,
 				263B103521FE33A000AF9EF9 /* Extensions.swift in Sources */,
+				A20D15EA22DE158000044CFC /* BlockComposition.swift in Sources */,
+				A20D15EB22DE158000044CFC /* BlockElement.swift in Sources */,
 				263B103621FE33A000AF9EF9 /* Bot.swift in Sources */,
 				263B102921FE33A000AF9EF9 /* Edited.swift in Sources */,
 				263B102721FE33A000AF9EF9 /* Attachment.swift in Sources */,
@@ -1269,6 +1280,7 @@
 				263B103C21FE33A000AF9EF9 /* SlackError.swift in Sources */,
 				263B103221FE33A000AF9EF9 /* Team.swift in Sources */,
 				263B103321FE33A000AF9EF9 /* User.swift in Sources */,
+				A20D15EC22DE158000044CFC /* BlockLayout.swift in Sources */,
 				263B103021FE33A000AF9EF9 /* Channel.swift in Sources */,
 				263B102621FE33A000AF9EF9 /* AttachmentField.swift in Sources */,
 				263B102B21FE33A000AF9EF9 /* Comment.swift in Sources */,
