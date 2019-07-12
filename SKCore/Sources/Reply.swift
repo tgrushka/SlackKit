@@ -22,11 +22,32 @@
 // THE SOFTWARE.
 
 public struct Reply {
+    fileprivate enum CodingKeys: String {
+        case user
+        case ts
+    }
+    
     public let user: String?
     public let ts: String?
-
+    
     public init(reply: [String: Any]?) {
-        user = reply?["user"] as? String
-        ts = reply?["ts"] as? String
+        user = reply?[CodingKeys.user.rawValue] as? String
+        ts = reply?[CodingKeys.ts.rawValue] as? String
     }
 }
+
+extension Reply: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        user = try values.decodeIfPresent(String.self, forKey: .user)
+        ts = try values.decodeIfPresent(String.self, forKey: .ts)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(user, forKey: .user)
+        try container.encode(ts, forKey: .ts)
+    }
+}
+
+extension Reply.CodingKeys: CodingKey { }

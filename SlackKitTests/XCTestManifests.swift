@@ -18,6 +18,10 @@ extension SKCoreTests {
         ("testMpim", testMpim),
         ("testUser", testUser),
         ("testUserGroup", testUserGroup),
+        ("testActionCodable", testActionCodable),
+        ("testAttachmentFieldCodable", testAttachmentFieldCodable),
+        ("testEditedCodable", testEditedCodable),
+        ("testReplyCodable", testReplyCodable),
     ]
 }
 
