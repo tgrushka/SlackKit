@@ -271,6 +271,7 @@ extension WebAPI {
         parse: ParseMode? = nil,
         linkNames: Bool? = nil,
         attachments: [Attachment?]? = nil,
+        blocks: [Block]? = nil,
         unfurlLinks: Bool? = nil,
         unfurlMedia: Bool? = nil,
         iconURL: String? = nil,
@@ -290,7 +291,8 @@ extension WebAPI {
             "username": username,
             "icon_url": iconURL,
             "icon_emoji": iconEmoji,
-            "attachments": encodeAttachments(attachments)
+            "attachments": encodeAttachments(attachments),
+            "blocks": encodeBlocks(blocks)
         ]
         networkInterface.request(.chatPostMessage, parameters: parameters, successClosure: {(response) in
             success?((ts: response["ts"] as? String, response["channel"] as? String))
@@ -346,6 +348,7 @@ extension WebAPI {
         thread: String? = nil,
         asUser: Bool? = nil,
         attachments: [Attachment?]? = nil,
+        blocks: [Block]? = nil,
         linkNames: Bool? = nil,
         parse: ParseMode? = nil,
         success: (((ts: String?, channel: String?)) -> Void)?,
@@ -359,6 +362,7 @@ extension WebAPI {
             "thread_ts": thread,
             "as_user": asUser,
             "attachments": encodeAttachments(attachments),
+            "blocks": encodeBlocks(blocks),
             "link_names": linkNames,
             "parse": parse?.rawValue,
             ]
@@ -1233,6 +1237,19 @@ extension WebAPI {
             }
             do {
                 let data = try JSONSerialization.data(withJSONObject: attachmentArray, options: [])
+                return String(data: data, encoding: String.Encoding.utf8)
+            } catch let error {
+                print(error)
+            }
+        }
+        return nil
+    }
+
+    fileprivate func encodeBlocks(_ blocks: [Block]?) -> String? {
+        if let blocks = blocks {
+            let blocksArray: [[String: Any]] = blocks.map { $0.dictionary }
+            do {
+                let data = try JSONSerialization.data(withJSONObject: blocksArray, options: [])
                 return String(data: data, encoding: String.Encoding.utf8)
             } catch let error {
                 print(error)
