@@ -22,14 +22,20 @@
 // THE SOFTWARE.
 
 public struct AttachmentField {
+    fileprivate enum CodingKeys: String {
+        case title
+        case value
+        case short
+    }
+    
     public let title: String?
     public let value: String?
     public let short: Bool?
-
+    
     public init(field: [String: Any]?) {
-        title = field?["title"] as? String
-        value = field?["value"] as? String
-        short = field?["short"] as? Bool
+        title = field?[CodingKeys.title.rawValue] as? String
+        value = field?[CodingKeys.value.rawValue] as? String
+        short = field?[CodingKeys.short.rawValue] as? Bool
     }
 
     public init(title: String?, value: String?, short: Bool? = nil) {
@@ -40,9 +46,27 @@ public struct AttachmentField {
 
     public var dictionary: [String: Any] {
         var field = [String: Any]()
-        field["title"] = title
-        field["value"] = value
-        field["short"] = short
+        field[CodingKeys.title.rawValue] = title
+        field[CodingKeys.value.rawValue] = value
+        field[CodingKeys.short.rawValue] = short
         return field
     }
 }
+
+extension AttachmentField: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+        short = try values.decodeIfPresent(Bool.self, forKey: .short)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(value, forKey: .value)
+        try container.encode(short, forKey: .short)
+    }
+}
+
+extension AttachmentField.CodingKeys: CodingKey { }

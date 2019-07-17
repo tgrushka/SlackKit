@@ -22,11 +22,32 @@
 // THE SOFTWARE.
 
 public struct Edited {
+    fileprivate enum CodingKeys: String {
+        case user
+        case ts
+    }
+    
     public let user: String?
     public let ts: String?
 
     public init(edited: [String: Any]?) {
-        user = edited?["user"] as? String
-        ts = edited?["ts"] as? String
+        user = edited?[CodingKeys.user.rawValue] as? String
+        ts = edited?[CodingKeys.ts.rawValue] as? String
     }
 }
+
+extension Edited: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        user = try values.decodeIfPresent(String.self, forKey: .user)
+        ts = try values.decodeIfPresent(String.self, forKey: .ts)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(user, forKey: .user)
+        try container.encode(ts, forKey: .ts)
+    }
+}
+
+extension Edited.CodingKeys: CodingKey { }

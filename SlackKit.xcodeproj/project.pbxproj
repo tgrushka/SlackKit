@@ -122,6 +122,10 @@
 		A20D15EA22DE158000044CFC /* BlockComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E722DE158000044CFC /* BlockComposition.swift */; };
 		A20D15EB22DE158000044CFC /* BlockElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E822DE158000044CFC /* BlockElement.swift */; };
 		A20D15EC22DE158000044CFC /* BlockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E922DE158000044CFC /* BlockLayout.swift */; };
+		9EA45FB922C01290006A6D36 /* action.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EA45FB822C01290006A6D36 /* action.json */; };
+		9EE6A7C322C2CDD6002BD111 /* edited.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EE6A7C222C2CDD6002BD111 /* edited.json */; };
+		9EEC459622BE63F800206AC3 /* reply.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEC459522BE63F800206AC3 /* reply.json */; };
+		9EEC459822BE789600206AC3 /* attachmentfield.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEC459722BE789600206AC3 /* attachmentfield.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -317,6 +321,10 @@
 		A20D15E722DE158000044CFC /* BlockComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockComposition.swift; sourceTree = "<group>"; };
 		A20D15E822DE158000044CFC /* BlockElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockElement.swift; sourceTree = "<group>"; };
 		A20D15E922DE158000044CFC /* BlockLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockLayout.swift; sourceTree = "<group>"; };
+		9EA45FB822C01290006A6D36 /* action.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = action.json; sourceTree = "<group>"; };
+		9EE6A7C222C2CDD6002BD111 /* edited.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = edited.json; sourceTree = "<group>"; };
+		9EEC459522BE63F800206AC3 /* reply.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reply.json; sourceTree = "<group>"; };
+		9EEC459722BE789600206AC3 /* attachmentfield.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attachmentfield.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -827,13 +835,17 @@
 		26D4E618222072A700A67B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9EA45FB822C01290006A6D36 /* action.json */,
+				9EEC459722BE789600206AC3 /* attachmentfield.json */,
 				26D4E6282220731800A67B67 /* channel.json */,
 				26D4E6222220731700A67B67 /* conversation.json */,
+				9EE6A7C222C2CDD6002BD111 /* edited.json */,
 				26D4E6262220731800A67B67 /* events.json */,
 				26D4E62A2220731800A67B67 /* file.json */,
 				26D4E6272220731800A67B67 /* group.json */,
 				26D4E6232220731700A67B67 /* im.json */,
 				26D4E6212220731700A67B67 /* mpim.json */,
+				9EEC459522BE63F800206AC3 /* reply.json */,
 				26D4E6292220731800A67B67 /* rtm.connect.json */,
 				26D4E6202220731700A67B67 /* rtm.start.json */,
 				26D4E6242220731800A67B67 /* user.json */,
@@ -1194,6 +1206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2601B6CD2223038A00F197AB /* channel.json in Resources */,
+				9EA45FB922C01290006A6D36 /* action.json in Resources */,
 				2601B710222F766D00F197AB /* member_left_channel.json in Resources */,
 				2601B6CE2223038A00F197AB /* conversation.json in Resources */,
 				2601B70F222F766D00F197AB /* member_joined_channel.json in Resources */,
@@ -1204,8 +1217,11 @@
 				2601B6D32223038A00F197AB /* mpim.json in Resources */,
 				2601B6D42223038A00F197AB /* rtm.connect.json in Resources */,
 				2601B6D52223038A00F197AB /* rtm.start.json in Resources */,
+				9EEC459822BE789600206AC3 /* attachmentfield.json in Resources */,
 				2601B6D62223038A00F197AB /* user.json in Resources */,
+				9EEC459622BE63F800206AC3 /* reply.json in Resources */,
 				2601B6D72223038A00F197AB /* usergroup.json in Resources */,
+				9EE6A7C322C2CDD6002BD111 /* edited.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

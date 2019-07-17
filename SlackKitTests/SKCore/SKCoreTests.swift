@@ -44,6 +44,10 @@ final class SKCoreTests: XCTestCase {
         static let user             = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/user.json"))
         static let usergroup        = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/usergroup.json"))
         static let events           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/events.json"))
+        static let action           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/action.json"))
+        static let attachmentfield  = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/attachmentfield.json"))
+        static let edited           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/edited.json"))
+        static let reply            = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/reply.json"))
     }
 
     static var allTests = [
@@ -55,7 +59,10 @@ final class SKCoreTests: XCTestCase {
         ("TestMpim", testMpim),
         ("testUser", testUser),
         ("testUserGroup", testUserGroup),
-        ("testEvents", testEvents)
+        ("testEvents", testEvents),
+        ("testActionCodable", testActionCodable),
+        ("testAttachmentFieldCodable", testAttachmentFieldCodable),
+        ("testReplyCodable", testReplyCodable)
     ]
   
   func testEvents() {
@@ -145,5 +152,88 @@ final class SKCoreTests: XCTestCase {
     let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
     let userGroup = UserGroup(userGroup: json)
     XCTAssertNotNil(userGroup)
+  }
+
+  func testActionCodable() {
+    let data = JSONData.action
+    let decoder = JSONDecoder()
+    let actionByDecoder = try? decoder.decode(Action.self, from: data)
+    XCTAssertNotNil(actionByDecoder)
+    XCTAssertNotNil(actionByDecoder!.name)
+    XCTAssertNotNil(actionByDecoder!.text)
+    XCTAssertNotNil(actionByDecoder!.type)
+    XCTAssertNotNil(actionByDecoder!.value)
+    XCTAssertNotNil(actionByDecoder!.url)
+    XCTAssertNotNil(actionByDecoder!.style)
+    XCTAssertNotNil(actionByDecoder!.confirm)
+    XCTAssertNotNil(actionByDecoder!.options)
+    XCTAssertNotNil(actionByDecoder!.dataSource)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(actionByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let action = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(action)
+    let actionBySerialization = Action(action: action)
+    XCTAssertEqual(actionBySerialization.name, actionByDecoder!.name)
+    XCTAssertEqual(actionBySerialization.text, actionByDecoder!.text)
+    XCTAssertEqual(actionBySerialization.type, actionByDecoder!.type)
+    XCTAssertEqual(actionBySerialization.value, actionByDecoder!.value)
+    XCTAssertEqual(actionBySerialization.url, actionByDecoder!.url)
+    XCTAssertEqual(actionBySerialization.style, actionByDecoder!.style)
+    XCTAssertEqual(actionBySerialization.options?.count, actionByDecoder!.options?.count)
+    XCTAssertEqual(actionBySerialization.dataSource, actionByDecoder!.dataSource)
+  }
+
+  func testAttachmentFieldCodable() {
+    let data = JSONData.attachmentfield
+    let decoder = JSONDecoder()
+    let attachmentFieldByDecoder = try? decoder.decode(AttachmentField.self, from: data)
+    XCTAssertNotNil(attachmentFieldByDecoder)
+    XCTAssertNotNil(attachmentFieldByDecoder!.title)
+    XCTAssertNotNil(attachmentFieldByDecoder!.value)
+    XCTAssertNotNil(attachmentFieldByDecoder!.short)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(attachmentFieldByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let field = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(field)
+    let attachmentFieldBySerialization = AttachmentField(field: field)
+    XCTAssertEqual(attachmentFieldBySerialization.title, attachmentFieldByDecoder!.title)
+    XCTAssertEqual(attachmentFieldBySerialization.value, attachmentFieldByDecoder!.value)
+    XCTAssertEqual(attachmentFieldBySerialization.short, attachmentFieldByDecoder!.short)
+  }
+    
+  func testEditedCodable() {
+    let data = JSONData.edited
+    let decoder = JSONDecoder()
+    let editedByDecoder = try? decoder.decode(Edited.self, from: data)
+    XCTAssertNotNil(editedByDecoder)
+    XCTAssertNotNil(editedByDecoder!.user)
+    XCTAssertNotNil(editedByDecoder!.ts)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(editedByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let edited = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(edited)
+    let editedBySerialization = Edited(edited: edited)
+    XCTAssertEqual(editedBySerialization.user, editedByDecoder!.user)
+    XCTAssertEqual(editedBySerialization.ts, editedByDecoder!.ts)
+  }
+    
+  func testReplyCodable() {
+    let data = JSONData.reply
+    let decoder = JSONDecoder()
+    let replyByDecoder = try? decoder.decode(Reply.self, from: data)
+    XCTAssertNotNil(replyByDecoder)
+    XCTAssertNotNil(replyByDecoder!.user)
+    XCTAssertNotNil(replyByDecoder!.ts)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(replyByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let reply = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(reply)
+    let replyBySerialization = Reply(reply: reply)
+    XCTAssertEqual(replyBySerialization.user, replyByDecoder!.user)
+    XCTAssertEqual(replyBySerialization.ts, replyByDecoder!.ts)
   }
 }
