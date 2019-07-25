@@ -22,13 +22,37 @@
 // THE SOFTWARE.
 
 public struct Topic {
+    fileprivate enum CodingKeys: String {
+        case value
+        case creator
+        case lastSet = "last_set"
+    }
+    
     public let value: String?
     public let creator: String?
     public let lastSet: Int?
 
     public init(topic: [String: Any]?) {
-        value = topic?["value"] as? String
-        creator = topic?["creator"] as? String
-        lastSet = topic?["last_set"] as? Int
+        value = topic?[CodingKeys.value] as? String
+        creator = topic?[CodingKeys.creator] as? String
+        lastSet = topic?[CodingKeys.lastSet] as? Int
     }
 }
+
+extension Topic: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+        creator = try values.decodeIfPresent(String.self, forKey: .creator)
+        lastSet = try values.decodeIfPresent(Int.self, forKey: .lastSet)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(value, forKey: .value)
+        try container.encode(creator, forKey: .creator)
+        try container.encode(lastSet, forKey: .lastSet)
+    }
+}
+
+extension Topic.CodingKeys: CodingKey { }

@@ -31,8 +31,8 @@ public struct Edited {
     public let ts: String?
 
     public init(edited: [String: Any]?) {
-        user = edited?[CodingKeys.user.rawValue] as? String
-        ts = edited?[CodingKeys.ts.rawValue] as? String
+        user = edited?[CodingKeys.user] as? String
+        ts = edited?[CodingKeys.ts] as? String
     }
 }
 

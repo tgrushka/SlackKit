@@ -33,9 +33,9 @@ public struct AttachmentField {
     public let short: Bool?
     
     public init(field: [String: Any]?) {
-        title = field?[CodingKeys.title.rawValue] as? String
-        value = field?[CodingKeys.value.rawValue] as? String
-        short = field?[CodingKeys.short.rawValue] as? Bool
+        title = field?[CodingKeys.title] as? String
+        value = field?[CodingKeys.value] as? String
+        short = field?[CodingKeys.short] as? Bool
     }
 
     public init(title: String?, value: String?, short: Bool? = nil) {
@@ -46,9 +46,9 @@ public struct AttachmentField {
 
     public var dictionary: [String: Any] {
         var field = [String: Any]()
-        field[CodingKeys.title.rawValue] = title
-        field[CodingKeys.value.rawValue] = value
-        field[CodingKeys.short.rawValue] = short
+        field[CodingKeys.title] = title
+        field[CodingKeys.value] = value
+        field[CodingKeys.short] = short
         return field
     }
 }

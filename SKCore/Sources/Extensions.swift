@@ -39,6 +39,18 @@ public extension UInt64 {
     }
 }
 
+public extension Dictionary where Key == String, Value == Any {
+    subscript(codingKey: CodingKey) -> Any? {
+        get {
+            return self[codingKey.stringValue]
+        }
+    
+        set {
+            self[codingKey.stringValue] = newValue
+        }
+    }
+}
+
 public func filterNilParameters(_ parameters: [String: Any?]) -> [String: Any] {
     var finalParameters = [String: Any]()
     for (key, value) in parameters {
