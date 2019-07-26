@@ -1138,6 +1138,15 @@ extension WebAPI {
             failure?(error)
         }
     }
+    
+    public func usersLookupByEmail(_ email: String, success: ((_ user: User) -> Void)?, failure: FailureClosure?) {
+        let parameters: [String: Any] = ["token": token, "email": email]
+        networkInterface.request(.usersLookupByEmail, parameters: parameters, successClosure: { response in
+            success?(User(user: response["user"] as? [String: Any]))
+        }) { error in
+            failure?(error)
+        }
+    }
 
     public func usersProfileSet(profile: User.Profile, success: SuccessClosure?, failure: FailureClosure?) {
         let profileValues = ([
