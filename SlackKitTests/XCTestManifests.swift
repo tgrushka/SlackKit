@@ -20,8 +20,11 @@ extension SKCoreTests {
         ("testUserGroup", testUserGroup),
         ("testActionCodable", testActionCodable),
         ("testAttachmentFieldCodable", testAttachmentFieldCodable),
+        ("testCustomProfileFieldCodable", testCustomProfileFieldCodable),
+        ("testDoNotDisturbStatusCodable", testDoNotDisturbStatusCodable),
         ("testEditedCodable", testEditedCodable),
         ("testReplyCodable", testReplyCodable),
+        ("testTeamIconCodable", testTeamIconCodable),
         ("testTopicCodable", testTopicCodable),
     ]
 }
