@@ -1,0 +1,12 @@
+{
+    "id": "any id",
+    "alt": "any alt",
+    "value": "any value",
+    "is_hidden": true,
+    "hint": "any hint",
+    "label": "any label",
+    "options": "any options",
+    "ordering": 1,
+    "possible_values": ["first value", "second value"],
+    "type": "any type"
+}

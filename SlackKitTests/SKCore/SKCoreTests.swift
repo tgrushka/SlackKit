@@ -46,8 +46,12 @@ final class SKCoreTests: XCTestCase {
         static let events           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/events.json"))
         static let action           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/action.json"))
         static let attachmentfield  = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/attachmentfield.json"))
+        static let customprofilefield = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/customprofilefield.json"))
+        static let donotdisturbstatus = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/donotdisturbstatus.json"))
         static let edited           = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/edited.json"))
         static let reply            = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/reply.json"))
+        static let teamicon         = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/teamicon.json"))
+        static let topic            = try! Data(contentsOf: URL(fileURLWithPath: "\(rootPath)/topic.json"))
     }
 
     static var allTests = [
@@ -62,7 +66,8 @@ final class SKCoreTests: XCTestCase {
         ("testEvents", testEvents),
         ("testActionCodable", testActionCodable),
         ("testAttachmentFieldCodable", testAttachmentFieldCodable),
-        ("testReplyCodable", testReplyCodable)
+        ("testReplyCodable", testReplyCodable),
+        ("testTopicCodable", testTopicCodable)
     ]
   
   func testEvents() {
@@ -203,6 +208,39 @@ final class SKCoreTests: XCTestCase {
     XCTAssertEqual(attachmentFieldBySerialization.short, attachmentFieldByDecoder!.short)
   }
     
+  func testCustomProfileFieldCodable() {
+    let data = JSONData.customprofilefield
+    let decoder = JSONDecoder()
+    let customProfileFieldByDecoder = try? decoder.decode(CustomProfileField.self, from: data)
+    XCTAssertNotNil(customProfileFieldByDecoder)
+    XCTAssertNotNil(customProfileFieldByDecoder!.id)
+    XCTAssertNotNil(customProfileFieldByDecoder!.alt)
+    XCTAssertNotNil(customProfileFieldByDecoder!.value)
+    XCTAssertNotNil(customProfileFieldByDecoder!.hidden)
+    XCTAssertNotNil(customProfileFieldByDecoder!.hint)
+    XCTAssertNotNil(customProfileFieldByDecoder!.label)
+    XCTAssertNotNil(customProfileFieldByDecoder!.options)
+    XCTAssertNotNil(customProfileFieldByDecoder!.ordering)
+    XCTAssertNotNil(customProfileFieldByDecoder!.possibleValues)
+    XCTAssertNotNil(customProfileFieldByDecoder!.type)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(customProfileFieldByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let field = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(field)
+    let customProfileFieldBySerialization = CustomProfileField(field: field)
+    XCTAssertEqual(customProfileFieldBySerialization.id, customProfileFieldByDecoder!.id)
+    XCTAssertEqual(customProfileFieldBySerialization.alt, customProfileFieldByDecoder!.alt)
+    XCTAssertEqual(customProfileFieldBySerialization.value, customProfileFieldByDecoder!.value)
+    XCTAssertEqual(customProfileFieldBySerialization.hidden, customProfileFieldByDecoder!.hidden)
+    XCTAssertEqual(customProfileFieldBySerialization.hint, customProfileFieldByDecoder!.hint)
+    XCTAssertEqual(customProfileFieldBySerialization.label, customProfileFieldByDecoder!.label)
+    XCTAssertEqual(customProfileFieldBySerialization.options, customProfileFieldByDecoder!.options)
+    XCTAssertEqual(customProfileFieldBySerialization.ordering, customProfileFieldByDecoder!.ordering)
+    XCTAssertEqual(customProfileFieldBySerialization.possibleValues, customProfileFieldByDecoder!.possibleValues)
+    XCTAssertEqual(customProfileFieldBySerialization.type, customProfileFieldByDecoder!.type)
+  }
+    
   func testEditedCodable() {
     let data = JSONData.edited
     let decoder = JSONDecoder()
@@ -235,5 +273,24 @@ final class SKCoreTests: XCTestCase {
     let replyBySerialization = Reply(reply: reply)
     XCTAssertEqual(replyBySerialization.user, replyByDecoder!.user)
     XCTAssertEqual(replyBySerialization.ts, replyByDecoder!.ts)
+  }
+    
+  func testTopicCodable() {
+    let data = JSONData.topic
+    let decoder = JSONDecoder()
+    let topicByDecoder = try? decoder.decode(Topic.self, from: data)
+    XCTAssertNotNil(topicByDecoder)
+    XCTAssertNotNil(topicByDecoder!.value)
+    XCTAssertNotNil(topicByDecoder!.creator)
+    XCTAssertNotNil(topicByDecoder!.lastSet)
+    let encoder = JSONEncoder()
+    let jsonData = try? encoder.encode(topicByDecoder!)
+    XCTAssertNotNil(jsonData)
+    let topic = try? JSONSerialization.jsonObject(with: jsonData!, options: []) as? [String: Any]
+    XCTAssertNotNil(topic)
+    let topicBySerialization = Topic(topic: topic)
+    XCTAssertEqual(topicBySerialization.value, topicByDecoder!.value)
+    XCTAssertEqual(topicBySerialization.creator, topicByDecoder!.creator)
+    XCTAssertEqual(topicBySerialization.lastSet, topicByDecoder!.lastSet)
   }
 }

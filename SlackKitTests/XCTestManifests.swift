@@ -22,6 +22,7 @@ extension SKCoreTests {
         ("testAttachmentFieldCodable", testAttachmentFieldCodable),
         ("testEditedCodable", testEditedCodable),
         ("testReplyCodable", testReplyCodable),
+        ("testTopicCodable", testTopicCodable),
     ]
 }
 
