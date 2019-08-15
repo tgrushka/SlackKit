@@ -31,8 +31,8 @@ public struct Reply {
     public let ts: String?
     
     public init(reply: [String: Any]?) {
-        user = reply?[CodingKeys.user.rawValue] as? String
-        ts = reply?[CodingKeys.ts.rawValue] as? String
+        user = reply?[CodingKeys.user] as? String
+        ts = reply?[CodingKeys.ts] as? String
     }
 }
 

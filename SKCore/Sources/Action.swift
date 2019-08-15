@@ -45,15 +45,15 @@ public struct Action {
     public let dataSource: DataSource?
     
     public init(action: [String: Any]?) {
-        name = action?[CodingKeys.name.rawValue] as? String
-        text = action?[CodingKeys.text.rawValue] as? String
-        type = action?[CodingKeys.type.rawValue] as? String
-        value = action?[CodingKeys.value.rawValue] as? String
-        url = action?[CodingKeys.url.rawValue] as? String
-        style = ActionStyle(rawValue: action?[CodingKeys.style.rawValue] as? String ?? "")
-        confirm = Confirm(confirm:action?[CodingKeys.confirm.rawValue] as? [String: Any])
-        options = (action?[CodingKeys.options.rawValue] as? [[String: Any]])?.map { Option(option: $0) }
-        dataSource = DataSource(rawValue: action?[CodingKeys.dataSource.rawValue] as? String ?? "")
+        name = action?[CodingKeys.name] as? String
+        text = action?[CodingKeys.text] as? String
+        type = action?[CodingKeys.type] as? String
+        value = action?[CodingKeys.value] as? String
+        url = action?[CodingKeys.url] as? String
+        style = ActionStyle(rawValue: action?[CodingKeys.style] as? String ?? "")
+        confirm = Confirm(confirm:action?[CodingKeys.confirm] as? [String: Any])
+        options = (action?[CodingKeys.options] as? [[String: Any]])?.map { Option(option: $0) }
+        dataSource = DataSource(rawValue: action?[CodingKeys.dataSource] as? String ?? "")
     }
 
     public init(name: String, text: String, type: String = "button", style: ActionStyle = .defaultStyle, value: String? = nil,
@@ -71,15 +71,15 @@ public struct Action {
 
     public var dictionary: [String: Any] {
         var dict = [String: Any]()
-        dict[CodingKeys.name.rawValue] = name
-        dict[CodingKeys.text.rawValue] = text
-        dict[CodingKeys.type.rawValue] = type
-        dict[CodingKeys.value.rawValue] = value
-        dict[CodingKeys.url.rawValue] = url
-        dict[CodingKeys.style.rawValue] = style?.rawValue
-        dict[CodingKeys.confirm.rawValue] = confirm?.dictionary
-        dict[CodingKeys.options.rawValue] = options?.map { $0.dictionary }
-        dict[CodingKeys.dataSource.rawValue] = dataSource?.rawValue
+        dict[CodingKeys.name] = name
+        dict[CodingKeys.text] = text
+        dict[CodingKeys.type] = type
+        dict[CodingKeys.value] = value
+        dict[CodingKeys.url] = url
+        dict[CodingKeys.style] = style?.rawValue
+        dict[CodingKeys.confirm] = confirm?.dictionary
+        dict[CodingKeys.options] = options?.map { $0.dictionary }
+        dict[CodingKeys.dataSource] = dataSource?.rawValue
         return dict
     }
 
@@ -97,10 +97,10 @@ public struct Action {
         public let dismissText: String?
         
         public init(confirm: [String: Any]?) {
-            title = confirm?[CodingKeys.title.rawValue] as? String
-            text = confirm?[CodingKeys.text.rawValue] as? String
-            okText = confirm?[CodingKeys.okText.rawValue] as? String
-            dismissText = confirm?[CodingKeys.dismissText.rawValue] as? String
+            title = confirm?[CodingKeys.title] as? String
+            text = confirm?[CodingKeys.text] as? String
+            okText = confirm?[CodingKeys.okText] as? String
+            dismissText = confirm?[CodingKeys.dismissText] as? String
         }
 
         public init(text: String, title: String? = nil, okText: String? = nil, dismissText: String? = nil) {
@@ -112,10 +112,10 @@ public struct Action {
 
         public var dictionary: [String: Any] {
             var dict = [String: Any]()
-            dict[CodingKeys.title.rawValue] = title
-            dict[CodingKeys.text.rawValue] = text
-            dict[CodingKeys.okText.rawValue] = okText
-            dict[CodingKeys.dismissText.rawValue] = dismissText
+            dict[CodingKeys.title] = title
+            dict[CodingKeys.text] = text
+            dict[CodingKeys.okText] = okText
+            dict[CodingKeys.dismissText] = dismissText
             return dict
         }
     }
@@ -130,8 +130,8 @@ public struct Action {
         public let value: String?
         
         public init(option: [String: Any]?) {
-            text = option?[CodingKeys.text.rawValue] as? String
-            value = option?[CodingKeys.value.rawValue] as? String
+            text = option?[CodingKeys.text] as? String
+            value = option?[CodingKeys.value] as? String
         }
 
         public init(text: String, value: String) {
@@ -141,8 +141,8 @@ public struct Action {
 
         public var dictionary: [String: Any] {
             var dict = [String: Any]()
-            dict[CodingKeys.text.rawValue] = text
-            dict[CodingKeys.value.rawValue] = value
+            dict[CodingKeys.text] = text
+            dict[CodingKeys.value] = value
             return dict
         }
     }

@@ -22,6 +22,19 @@
 // THE SOFTWARE.
 
 public struct CustomProfileField {
+    fileprivate enum CodingKeys: String {
+        case id
+        case alt
+        case value
+        case hidden = "is_hidden"
+        case hint
+        case label
+        case options
+        case ordering
+        case possibleValues = "possible_values"
+        case type
+    }
+    
     public var id: String?
     public var alt: String?
     public var value: String?
@@ -34,16 +47,16 @@ public struct CustomProfileField {
     public var type: String?
 
     public init(field: [String: Any]?) {
-        id = field?["id"] as? String
-        alt = field?["alt"] as? String
-        value = field?["value"] as? String
-        hidden = field?["is_hidden"] as? Bool
-        hint = field?["hint"] as? String
-        label = field?["label"] as? String
-        options = field?["options"] as? String
-        ordering = field?["ordering"] as? Int
-        possibleValues = field?["possible_values"] as? [String]
-        type = field?["type"] as? String
+        id = field?[CodingKeys.id] as? String
+        alt = field?[CodingKeys.alt] as? String
+        value = field?[CodingKeys.value] as? String
+        hidden = field?[CodingKeys.hidden] as? Bool
+        hint = field?[CodingKeys.hint] as? String
+        label = field?[CodingKeys.label] as? String
+        options = field?[CodingKeys.options] as? String
+        ordering = field?[CodingKeys.ordering] as? Int
+        possibleValues = field?[CodingKeys.possibleValues] as? [String]
+        type = field?[CodingKeys.type] as? String
     }
 
     public init(id: String?) {
@@ -63,3 +76,35 @@ public struct CustomProfileField {
         type = profile?.type != nil ? profile?.type : type
     }
 }
+
+extension CustomProfileField: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        alt = try values.decodeIfPresent(String.self, forKey: .alt)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
+        hidden = try values.decodeIfPresent(Bool.self, forKey: .hidden)
+        hint = try values.decodeIfPresent(String.self, forKey: .hint)
+        label = try values.decodeIfPresent(String.self, forKey: .label)
+        options = try values.decodeIfPresent(String.self, forKey: .options)
+        ordering = try values.decodeIfPresent(Int.self, forKey: .ordering)
+        possibleValues = try values.decodeIfPresent([String].self, forKey: .possibleValues)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(alt, forKey: .alt)
+        try container.encode(value, forKey: .value)
+        try container.encode(hidden, forKey: .hidden)
+        try container.encode(hint, forKey: .hint)
+        try container.encode(label, forKey: .label)
+        try container.encode(options, forKey: .options)
+        try container.encode(ordering, forKey: .ordering)
+        try container.encode(possibleValues, forKey: .possibleValues)
+        try container.encode(type, forKey: .type)
+    }
+}
+
+extension CustomProfileField.CodingKeys: CodingKey { }
