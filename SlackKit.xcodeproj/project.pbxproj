@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,8 +107,6 @@
 		263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FC421FE23C200AF9EF9 /* SKRTMAPI.framework */; };
 		263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */; };
 		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
-		269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176021FFDB4C00F1F500 /* Starscream.framework */; };
-		269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A176121FFDB4C00F1F500 /* Swifter.framework */; };
 		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -130,6 +128,8 @@
 		A20D15EA22DE158000044CFC /* BlockComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E722DE158000044CFC /* BlockComposition.swift */; };
 		A20D15EB22DE158000044CFC /* BlockElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E822DE158000044CFC /* BlockElement.swift */; };
 		A20D15EC22DE158000044CFC /* BlockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E922DE158000044CFC /* BlockLayout.swift */; };
+		E20514F124FAE8B5000CF58E /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = E20514F024FAE8B5000CF58E /* Swifter */; };
+		E2E67B7224FAE66C00097A59 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,8 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				263B10D621FE534C00AF9EF9 /* SKCore.framework in Frameworks */,
+				E2E67B7224FAE66C00097A59 /* Starscream.framework in Frameworks */,
 				263B10D721FE534C00AF9EF9 /* SKWebAPI.framework in Frameworks */,
-				269A176A21FFDF9E00F1F500 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,9 +392,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20514F124FAE8B5000CF58E /* Swifter in Frameworks */,
 				263B10D821FE537800AF9EF9 /* SKCore.framework in Frameworks */,
 				263B10D921FE537800AF9EF9 /* SKWebAPI.framework in Frameworks */,
-				269A176D21FFDFB200F1F500 /* Swifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,6 +1102,9 @@
 			dependencies = (
 			);
 			name = SKServer;
+			packageProductDependencies = (
+				E20514F024FAE8B5000CF58E /* Swifter */,
+			);
 			productName = SKServer;
 			productReference = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1195,6 +1198,9 @@
 				en,
 			);
 			mainGroup = 263B0F8121FE1B2300AF9EF9;
+			packageReferences = (
+				E20514EF24FAE8B5000CF58E /* XCRemoteSwiftPackageReference "swifter" */,
+			);
 			productRefGroup = 263B0F8121FE1B2300AF9EF9;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1859,7 +1865,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1893,7 +1902,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1994,7 +2006,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2028,7 +2043,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/macOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2244,6 +2262,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E20514EF24FAE8B5000CF58E /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E20514F024FAE8B5000CF58E /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E20514EF24FAE8B5000CF58E /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 263B0F8221FE1B2300AF9EF9 /* Project object */;
 }
