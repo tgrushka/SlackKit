@@ -22,6 +22,10 @@
 // THE SOFTWARE.
 
 public struct CustomProfile {
+    fileprivate enum CodingKeys: String {
+        case fields
+    }
+
     public var fields = [String: CustomProfileField]()
 
     public init(profile: [String: Any]?) {
@@ -47,3 +51,22 @@ public struct CustomProfile {
         }
     }
 }
+
+extension CustomProfile: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        fields = try values.decodeIfPresent([String: CustomProfileField].self, forKey: .fields) ?? [String: CustomProfileField]()
+    }
+    
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(fields, forKey: .fields)
+    }
+}
+
+extension CustomProfile.CodingKeys: CodingKey { }
+
+

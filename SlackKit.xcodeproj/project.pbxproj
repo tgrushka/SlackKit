@@ -1084,6 +1084,8 @@
 			dependencies = (
 			);
 			name = SlackKit;
+			packageProductDependencies = (
+			);
 			productName = SlackKit;
 			productReference = 263B0FD121FE23CD00AF9EF9 /* SlackKit.framework */;
 			productType = "com.apple.product-type.framework";

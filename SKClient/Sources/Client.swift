@@ -223,7 +223,7 @@ extension Client {
     func messageSent(_ event: Event) {
         guard
             let reply = event.replyTo,
-            let message = sentMessages[NSNumber(value: reply).stringValue],
+            var message = sentMessages[NSNumber(value: reply).stringValue],
             let channel = message.channel,
             let ts = message.ts
         else {
@@ -615,7 +615,7 @@ extension Client {
             guard
                 let channel = item.channel,
                 let ts = item.ts,
-                let message = channels[channel]?.messages[ts]
+                var message = channels[channel]?.messages[ts]
             else {
                 return
             }
@@ -652,7 +652,7 @@ extension Client {
             guard
                 let channel = item.channel,
                 let ts = item.ts,
-                let message = channels[channel]?.messages[ts]
+                var message = channels[channel]?.messages[ts]
             else {
                 return
             }
@@ -685,7 +685,7 @@ extension Client {
         guard let name = event.name else {
             return
         }
-        authenticatedUser?.preferences?[name] = event.value
+        authenticatedUser?.preferences?[name] = event.value as? String
     }
 }
 
