@@ -30,7 +30,7 @@ import Foundation
 @_exported import SKWebAPI
 #endif
 
-public final class SlackKit: RTMAdapter {
+public class SlackKit: RTMAdapter {
 
     public typealias EventClosure = (Event, ClientConnection?) -> Void
     internal typealias TypedEvent = (EventType, EventClosure)

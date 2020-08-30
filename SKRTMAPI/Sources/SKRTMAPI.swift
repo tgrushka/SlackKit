@@ -50,7 +50,7 @@ public protocol RTMDelegate: class {
     func receivedMessage(_ message: String)
 }
 
-public final class SKRTMAPI: RTMDelegate {
+public class SKRTMAPI: RTMDelegate {
 
     public var rtm: RTMWebSocket
     public var adapter: RTMAdapter?

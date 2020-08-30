@@ -15,7 +15,7 @@ import Foundation
 
 public typealias TitanFunc = (RequestType, ResponseType) -> (request: RequestType, response: ResponseType)
 
-public final class Titan {
+public class Titan {
 
     public let log: TitanLogger?
 

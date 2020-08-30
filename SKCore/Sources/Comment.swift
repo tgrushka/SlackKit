@@ -22,6 +22,16 @@
 // THE SOFTWARE.
 
 public struct Comment: Equatable {
+    fileprivate enum CodingKeys: String {
+        case id
+        case user
+        case created
+        case comment
+        case starred
+        case stars
+        case reactions
+    }
+    
     public let id: String?
     public let user: String?
     public var created: Int?
@@ -49,3 +59,32 @@ public struct Comment: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+extension Comment: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        user = try values.decodeIfPresent(String.self, forKey: .user)
+        created = try values.decodeIfPresent(Int.self, forKey: .created)
+        comment = try values.decodeIfPresent(String.self, forKey: .comment)
+        starred = try values.decodeIfPresent(Bool.self, forKey: .starred)
+        stars = try values.decodeIfPresent(Int.self, forKey: .stars)
+        reactions = try values.decodeIfPresent([Reaction].self, forKey: .reactions) ?? []
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(user, forKey: .user)
+        try container.encode(created, forKey: .created)
+        try container.encode(comment, forKey: .comment)
+        try container.encode(starred, forKey: .starred)
+        try container.encode(stars, forKey: .stars)
+        try container.encode(reactions, forKey: .reactions)
+    }
+
+}
+
+extension Comment.CodingKeys: CodingKey { }

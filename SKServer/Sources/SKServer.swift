@@ -33,7 +33,7 @@ public protocol Middleware {
     func respond(to request: (RequestType, ResponseType)) -> (RequestType, ResponseType)
 }
 
-public final class SKServer {
+public class SKServer {
     internal let server: SlackKitServer
 
     public init?(server: SlackKitServer? = nil, responder: SlackKitResponder) {

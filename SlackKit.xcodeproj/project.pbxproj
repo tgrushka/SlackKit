@@ -102,11 +102,6 @@
 		263B10D821FE537800AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
 		263B10D921FE537800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
 		263B10DA21FE537D00AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
-		263B10DB21FE548800AF9EF9 /* SKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FAA21FE23A000AF9EF9 /* SKClient.framework */; };
-		263B10DC21FE548800AF9EF9 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
-		263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FC421FE23C200AF9EF9 /* SKRTMAPI.framework */; };
-		263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */; };
-		263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
 		269A185C220BB32B00F1F500 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		269A185D220BB32B00F1F500 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175B21FFDB4C00F1F500 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26D4E4D32210A31F00A67B67 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -129,6 +124,11 @@
 		A20D15EB22DE158000044CFC /* BlockElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E822DE158000044CFC /* BlockElement.swift */; };
 		A20D15EC22DE158000044CFC /* BlockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D15E922DE158000044CFC /* BlockLayout.swift */; };
 		E20514F124FAE8B5000CF58E /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = E20514F024FAE8B5000CF58E /* Swifter */; };
+		E259CD3324FB6F5E0012554D /* SKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FAA21FE23A000AF9EF9 /* SKClient.framework */; };
+		E259CD3624FB6F600012554D /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0F9B21FE235100AF9EF9 /* SKCore.framework */; };
+		E259CD3824FB6F610012554D /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FC421FE23C200AF9EF9 /* SKRTMAPI.framework */; };
+		E259CD3A24FB6F630012554D /* SKServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FDE21FE23DB00AF9EF9 /* SKServer.framework */; };
+		E259CD3C24FB6F640012554D /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B0FB721FE23B000AF9EF9 /* SKWebAPI.framework */; };
 		E2E67B7224FAE66C00097A59 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269A175A21FFDB4C00F1F500 /* Starscream.framework */; };
 /* End PBXBuildFile section */
 
@@ -380,11 +380,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263B10DB21FE548800AF9EF9 /* SKClient.framework in Frameworks */,
-				263B10DC21FE548800AF9EF9 /* SKCore.framework in Frameworks */,
-				263B10DD21FE548800AF9EF9 /* SKRTMAPI.framework in Frameworks */,
-				263B10DE21FE548800AF9EF9 /* SKServer.framework in Frameworks */,
-				263B10DF21FE548800AF9EF9 /* SKWebAPI.framework in Frameworks */,
+				E259CD3A24FB6F630012554D /* SKServer.framework in Frameworks */,
+				E259CD3324FB6F5E0012554D /* SKClient.framework in Frameworks */,
+				E259CD3C24FB6F640012554D /* SKWebAPI.framework in Frameworks */,
+				E259CD3624FB6F600012554D /* SKCore.framework in Frameworks */,
+				E259CD3824FB6F610012554D /* SKRTMAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

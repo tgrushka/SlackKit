@@ -172,16 +172,11 @@ extension Message: Codable {
         itemType = try values.decodeIfPresent(String.self, forKey: .itemType)
         isStarred = try values.decodeIfPresent(Bool.self, forKey: .isStarred)
         pinnedTo = try values.decodeIfPresent([String].self, forKey: .pinnedTo)
-        comment = nil
-        files = nil
-        reactions = []
-        attachments = nil
-        responseType = nil
-//        comment = try values.decodeIfPresent(Comment.self, forKey: .comment)
-//        files = try values.decodeIfPresent([File].self, forKey: .files)
-//        reactions = try values.decodeIfPresent([Reaction].self, forKey: .reactions)
-//        attachments = try values.decodeIfPresent([Attachment].self, forKey: .attachments)
-//        responseType = try values.decodeIfPresent(MessageResponse.self, forKey: .responseType)
+        comment = try values.decodeIfPresent(Comment.self, forKey: .comment)
+        files = try values.decodeIfPresent([File].self, forKey: .files)
+        reactions = try values.decodeIfPresent([Reaction].self, forKey: .reactions) ?? []
+        attachments = try values.decodeIfPresent([Attachment].self, forKey: .attachments)
+        responseType = try values.decodeIfPresent(MessageResponseType.self, forKey: .responseType)
         replaceOriginal = try values.decodeIfPresent(Bool.self, forKey: .replaceOriginal)
         deleteOriginal = try values.decodeIfPresent(Bool.self, forKey: .deleteOriginal)
         edited = try values.decodeIfPresent(Edited.self, forKey: .edited)
@@ -213,10 +208,10 @@ extension Message: Codable {
         try container.encode(itemType, forKey: .itemType)
         try container.encode(isStarred, forKey: .isStarred)
         try container.encode(pinnedTo, forKey: .pinnedTo)
-//        try container.encode(comment, forKey: .comment)
-//        try container.encode(files, forKey: .files)
-//        try container.encode(reactions, forKey: .reactions)
-//        try container.encode(attachments, forKey: .attachments)
+        try container.encode(comment, forKey: .comment)
+        try container.encode(files, forKey: .files)
+        try container.encode(reactions, forKey: .reactions)
+        try container.encode(attachments, forKey: .attachments)
         try container.encode(responseType, forKey: .responseType)
         try container.encode(replaceOriginal, forKey: .replaceOriginal)
         try container.encode(deleteOriginal, forKey: .deleteOriginal)

@@ -27,7 +27,7 @@ import Foundation
 @_exported import SKCore
 #endif
 
-public final class WebAPI {
+public class WebAPI {
 
     public typealias SuccessClosure = (_ success: Bool) -> Void
     public typealias FailureClosure = (_ error: SlackError) -> Void

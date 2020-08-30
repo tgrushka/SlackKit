@@ -22,6 +22,11 @@
 // THE SOFTWARE.
 
 public struct Reaction: Equatable {
+    fileprivate enum CodingKeys: String {
+        case name
+        case user
+    }
+    
     public let name: String?
     public var user: String?
 
@@ -52,3 +57,22 @@ public struct Reaction: Equatable {
         return lhs.name == rhs.name
     }
 }
+
+extension Reaction: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        user = try values.decodeIfPresent(String.self, forKey: .user)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(name, forKey: .name)
+        try container.encode(user, forKey: .user)
+    }
+}
+
+extension Reaction.CodingKeys: CodingKey { }
+
