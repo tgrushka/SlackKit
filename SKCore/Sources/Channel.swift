@@ -22,6 +22,34 @@
 // THE SOFTWARE.
 
 public struct Channel {
+    fileprivate enum CodingKeys: String {
+        case id
+        case created
+        case creator
+        case name
+        case isArchived = "is_archived"
+        case isGeneral = "is_general"
+        case isGroup = "is_group"
+        case isIM = "is_im"
+        case isMPIM = "is_mpim"
+        case user
+        case isUserDeleted = "is_user_deleted"
+        case isOpen = "is_open"
+        case topic
+        case purpose
+        case isMember = "is_member"
+        case lastRead = "last_read"
+        case latest
+        case unread
+        case unreadCountDisplay = "unread_count_display"
+        case hasPins = "has_pins"
+        case members
+        // Client use
+        case pinnedItems = "pinned_items"
+        case usersTyping = "users_typing"
+        case messages
+    }
+
     public let id: String?
     public let created: Int?
     public let creator: String?
@@ -86,3 +114,44 @@ public struct Channel {
         isMPIM = false
     }
 }
+
+extension Channel: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        created = try values.decodeIfPresent(Int.self, forKey: .created)
+        creator = try values.decodeIfPresent(String.self, forKey: .creator)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        isArchived = try values.decodeIfPresent(Bool.self, forKey: .isArchived)
+        isGeneral = try values.decodeIfPresent(Bool.self, forKey: .isGeneral)
+        isGroup = try values.decodeIfPresent(Bool.self, forKey: .isGroup)
+        isIM = try values.decodeIfPresent(Bool.self, forKey: .isIM)
+        isMPIM = try values.decodeIfPresent(Bool.self, forKey: .isMPIM)
+        user = try values.decodeIfPresent(String.self, forKey: .user)
+        isUserDeleted = try values.decodeIfPresent(Bool.self, forKey: .isUserDeleted)
+        isOpen = try values.decodeIfPresent(Bool.self, forKey: .isOpen)
+        topic = try values.decodeIfPresent(Topic.self, forKey: .topic)
+        purpose = try values.decodeIfPresent(Topic.self, forKey: .purpose)
+        isMember = try values.decodeIfPresent(Bool.self, forKey: .isMember)
+        lastRead = try values.decodeIfPresent(String.self, forKey: .lastRead)
+        latest = try values.decodeIfPresent(Message.self, forKey: .latest)
+        unread = try values.decodeIfPresent(Int.self, forKey: .unread)
+        unreadCountDisplay = try values.decodeIfPresent(Int.self, forKey: .unreadCountDisplay)
+        hasPins = try values.decodeIfPresent(Bool.self, forKey: .hasPins)
+        members = try values.decodeIfPresent([String].self, forKey: .members)
+        // Client use
+        pinnedItems = try values.decodeIfPresent([Item].self, forKey: .pinnedItems) ?? []
+        usersTyping = try values.decodeIfPresent([String].self, forKey: .usersTyping) ?? []
+        messages = try values.decodeIfPresent([String: Message].self, forKey: .messages) ?? [:]
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+    }
+}
+
+extension Channel.CodingKeys: CodingKey { }
+

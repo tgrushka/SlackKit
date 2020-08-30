@@ -22,6 +22,16 @@
 // THE SOFTWARE.
 
 public struct Item: Equatable {
+    fileprivate enum CodingKeys: String {
+        case type
+        case ts
+        case channel
+        case message
+        case file
+        case comment
+        case fileCommentID = "file_comment_id"
+    }
+
     public let type: String?
     public let ts: String?
     public let channel: String?
@@ -61,3 +71,32 @@ public struct Item: Equatable {
             lhs.message == rhs.message
     }
 }
+
+extension Item: Codable {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+        ts = try values.decodeIfPresent(String.self, forKey: .ts)
+        channel = try values.decodeIfPresent(String.self, forKey: .channel)
+        message = try values.decodeIfPresent(Message.self, forKey: .message)
+        file = try values.decodeIfPresent(File.self, forKey: .file)
+        comment = try values.decodeIfPresent(Comment.self, forKey: .comment)
+        fileCommentID = try values.decodeIfPresent(String.self, forKey: .fileCommentID)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(type, forKey: .type)
+        try container.encode(ts, forKey: .ts)
+        try container.encode(channel, forKey: .channel)
+        try container.encode(message, forKey: .message)
+        try container.encode(file, forKey: .file)
+        try container.encode(comment, forKey: .comment)
+        try container.encode(fileCommentID, forKey: .fileCommentID)
+    }
+}
+
+extension Item.CodingKeys: CodingKey { }
+

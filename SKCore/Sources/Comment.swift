@@ -84,7 +84,6 @@ extension Comment: Codable {
         try container.encode(stars, forKey: .stars)
         try container.encode(reactions, forKey: .reactions)
     }
-
 }
 
 extension Comment.CodingKeys: CodingKey { }
